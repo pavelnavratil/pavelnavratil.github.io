@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Pavel Navrátil',
-  tagline: 'My personal space about coding, life and stargazing.',
+  title: 'Space',
+  tagline: 'My personal place about coding, life and stargazing.',
   favicon: 'img/favicon.ico',
 
   url: 'http://space.inp.cz/',
@@ -42,35 +42,18 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Pavel Navrátil',
+      title: 'Space',
       logo: {
-        alt: 'Pavel Navrátil Logo',
+        alt: 'Space Logo',
         src: 'img/logo.svg',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'About me',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'}
-      ],
+      items: [],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          items: [
-            {
-              label: 'About me',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-          ],
+          items: [],
         }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Pavel Navrátil.`,
