@@ -3,15 +3,15 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Space',
-  tagline: 'My personal place about coding, life and stargazing.',
+  title: 'Pavel Navrátil',
+  tagline: 'Senior Full Stack Salesforce Developer',
   favicon: 'img/favicon.ico',
 
-  url: 'http://space.inp.cz/',
+  url: 'http://inp.cz/',
   baseUrl: '/',
 
-  organizationName: 'pavelnavratil',
-  projectName: 'pavelnavratil.github.io', 
+  organizationName: 'navratilpavel',
+  projectName: 'navratilpavel.github.io', 
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,20 +42,34 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Space',
+      title: 'Pavel Navrátil',
       logo: {
-        alt: 'Space Logo',
+        alt: 'Pavel Navrátil Logo',
         src: 'img/logo.svg',
       },
-      items: [],
+      items: [
+        {
+          to: 'about',
+          label: 'About Me',
+          position: 'left',
+          activeBaseRegex: `/about/`,
+        },
+        {
+          to: 'cv',
+          label: 'CV',
+          position: 'left',
+          activeBaseRegex: `/cv/`,
+        },
+        {
+          to: 'projects',
+          label: 'Projects',
+          position: 'left',
+          activeBaseRegex: `/projects/`,
+        },
+      ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          items: [],
-        }
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Pavel Navrátil.`,
     },
     prism: {
