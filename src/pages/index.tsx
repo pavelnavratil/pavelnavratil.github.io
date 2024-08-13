@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Banner from '@site/src/components/Banner';
 import HomepageNavDock from '@site/src/components/HomepageNavDock';
 import Heading from '@theme/Heading';
 
@@ -29,6 +30,7 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
+        <Banner />
         <HomepageNavDock />
       </main>
     </Layout>
