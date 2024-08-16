@@ -1,14 +1,14 @@
 [
 	{
 		"name": "Eloquent Force",
-		"description": "Blog about Salesforce Development and Architecture.",
-		"image": "/assets/images/projects/email.ml.png",
+		"description": "My blog about Salesforce Development and Architecture.",
+		"image": "/assets/images/projects/eloquentforce.jpg",
 		"url": "https://eloquentforce.com"
 	},
 	{
 		"name": "Eloquent Components",
-		"description": "Checkout out my Lighting Web Component library.",
-		"image": "/assets/images/projects/dns.surf.png",
+		"description": "Check out my Lightning Web Component library.",
+		"image": "/assets/images/projects/eloquentcomponents.jpg",
 		"url": "https://eloquentcomponents.com"
 	}
 ]
