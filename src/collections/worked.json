@@ -1,0 +1,16 @@
+[
+	{
+		"dates": "Dec 2018 - Nov 2023",
+        "company": "Gen",
+        "name": "Customer support user interface",
+		"description": "User interface built by custom Salesforce Lightning Components allowing showing data inside of Salesforce. Data are coming from two external servers connected to the Salesforce via a REST API connection.",
+		"image": "/assets/images/worked/csui.jpg"
+	},
+	{
+		"dates": "Nov 2018 - Dec 2018",
+        "company": "AspectWorks, s.r.o.",
+        "name": "Merchandiser App",
+		"description": "Mobile application for merchandiser team built inside of Salesforce App with reporting for management allowing merchandiser team to check stores by predefined road trips.",
+		"image": "/assets/images/worked/merchandiser.jpg"
+	}
+]

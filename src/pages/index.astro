@@ -1,12 +1,13 @@
 ---
 import Button from "../components/button.astro";
 import Projects from "../components/home/projects.astro";
+import Worked from "../components/home/worked.astro";
 import Separator from "../components/home/separator.astro";
 import Writings from "../components/home/writings.astro";
 import Layout from "../layouts/main.astro";
 ---
 
-<Layout title="Kai">
+<Layout title="Navrátil Pavel">
   <div
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
@@ -75,6 +76,8 @@ import Layout from "../layouts/main.astro";
 
   <Separator text="Check out my personal projects" />
   <Projects />
+  <Separator text="Check out my work projects" />
+  <Worked />
   <Separator text="Some of my thoughts" />
   <Writings />
 </Layout>

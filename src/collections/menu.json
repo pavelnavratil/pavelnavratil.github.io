@@ -12,6 +12,10 @@
 		"url": "/projects"
 	},
 	{
+		"name": "My Work",
+		"url": "/worked"
+	},
+	{
 		"name": "What I Do",
 		"url": "/what"
 	},
