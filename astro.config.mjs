@@ -3,8 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://pavelnavratil.github.io',
-	base: 'pavelnavratil.github.io',
+	site: 'https://inp.cz',
 	integrations: [tailwind()],
 	i18n: {
         locales: ['en', 'cs'],
