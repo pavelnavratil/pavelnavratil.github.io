@@ -1,0 +1,31 @@
+---
+import worked from "@collections/worked.json";
+import PageHeading from "@components/page-heading.astro";
+import Work from "@components/work.astro";
+import Layout from "@layouts/main.astro";
+---
+
+<Layout language="en" title="My Work Projects">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="My Work Projects"
+      description="Here are some projects I have worked on over the years."
+    />
+
+    <div
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+    >
+      {
+        worked.map((work) => {
+          return (
+            <Work
+              name={work.name}
+              description={work.description}
+              image={work.image}
+            />
+          )
+        })
+      }
+    </div>
+  </section>
+</Layout>
