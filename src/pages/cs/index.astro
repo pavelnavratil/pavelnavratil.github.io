@@ -5,9 +5,12 @@ import Worked from "@components/home/worked.astro";
 import Separator from "@components/home/separator.astro";
 import Writings from "@components/home/writings.astro";
 import Layout from "@layouts/main.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout language="cs" title="Navrátil Pavel">
+<Layout language={lang} title="Navrátil Pavel">
   <div
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
@@ -41,7 +44,7 @@ import Layout from "@layouts/main.astro";
           <li>Website Design</li>
           <li>and more...</li>
         </ul>
-        <Button text="What I Do" link="/what" />
+        <Button text={t('nav.what')} link={`/${lang}/what/`} />
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"

@@ -1,0 +1,21 @@
+---
+import menus from "@collections/menu.json";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+{
+  menus.map((menu) => {
+    const link = menu.url;
+    const key = `nav.${menu.key}`;
+    
+    return (
+    <a
+      href={`/${lang}${link}/`}
+      class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
+    >
+      {t(key)}
+    </a>
+      )
+    })
+  }
