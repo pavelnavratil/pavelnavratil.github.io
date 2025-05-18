@@ -1,5 +1,11 @@
+---
+const { prefixLocale = false } = Astro.props;
+import { getLangFromUrl } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const href = prefixLocale ? `/${lang}/`: `/`;
+---
 <a
-  href="/"
+  href={href}
   class="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-black dark:text-white font-semibold"
 >
   <span

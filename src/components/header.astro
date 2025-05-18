@@ -1,4 +1,5 @@
 ---
+const { prefixLocale = false } = Astro.props;
 import MenuPicker from "@components/menu-picker.astro";
 import Logo from "@components/logo.astro";
 ---
@@ -9,7 +10,7 @@ import Logo from "@components/logo.astro";
   <div
     class="flex items-center justify-between h-full max-w-5xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 border-transparent select-none lg:border-r lg:border-l lg:rounded-b-xl"
   >
-    <Logo />
+    <Logo prefixLocale={prefixLocale}/>
     <div
       id="mobileMenuBackground"
       onclick="closeMobileMenu()"
@@ -59,7 +60,7 @@ import Logo from "@components/logo.astro";
           >
           </div>
         </div>
-        <MenuPicker />
+        <MenuPicker prefixLocale={prefixLocale}/>
       </div>
       <div
         id="darkToggle"

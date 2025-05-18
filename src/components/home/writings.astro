@@ -1,4 +1,5 @@
 ---
+const { prefixLocale = false } = Astro.props;
 import Button from "../button.astro";
 import PostsLoop from "../posts-loop.astro";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
@@ -25,7 +26,7 @@ const t = useTranslations(lang);
         <PostsLoop count="3" />
 
         <div class="flex items-center justify-center w-full py-5">
-          <Button text={t('nav.thoughts')} link={`/${lang}/posts/`} />
+          {prefixLocale ? <Button text={t('nav.thoughts')} link={`/${lang}/posts/`} /> : <Button text={t('nav.thoughts')} link={`/posts/`} />}
         </div>
       </div>
     </div>

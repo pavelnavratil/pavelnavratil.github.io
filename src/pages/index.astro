@@ -8,8 +8,9 @@ import Layout from "@layouts/main.astro";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const prefixLocale = false;
 ---
-<Layout language={lang} title="Navrátil Pavel">
+<Layout language={lang} title="Navrátil Pavel" prefixLocale={prefixLocale}>
   <div
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
@@ -39,7 +40,7 @@ const t = useTranslations(lang);
           <li>Website Design</li>
           <li>and more...</li>
         </ul>
-        <Button text={t('nav.what')} link={`/${lang}/what/`} />
+        {prefixLocale ? <Button text={t('nav.what')} link={`/${lang}/what/`} /> : <Button text={t('nav.what')} link={`/what/`} />}
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
@@ -59,9 +60,9 @@ const t = useTranslations(lang);
   </div>
 
   <Separator text="Check out my personal projects" />
-  <Projects />
+  <Projects prefixLocale={prefixLocale}/>
   <Separator text="Check out my work projects" />
-  <Worked />
+  <Worked prefixLocale={prefixLocale}/>
   <Separator text="Some of my thoughts" />
-  <Writings />
+  <Writings prefixLocale={prefixLocale}/>
 </Layout>

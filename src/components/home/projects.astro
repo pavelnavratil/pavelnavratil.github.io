@@ -1,4 +1,5 @@
 ---
+const { prefixLocale = false } = Astro.props;
 import projects from "../../collections/projects.json";
 import Button from "../button.astro";
 import Project from "../project.astro";
@@ -34,6 +35,6 @@ const t = useTranslations(lang);
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    <Button text={t('nav.allProjects')} link={`/${lang}/projects/`} />
+    {prefixLocale ? <Button text={t('nav.allProjects')} link={`/${lang}/projects/`} /> : <Button text={t('nav.allProjects')} link={`/projects/`} />}
   </div>
 </section>
