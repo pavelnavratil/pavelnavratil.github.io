@@ -1,11 +1,10 @@
 ---
-const { prefixLocale = false } = Astro.props;
-import worked from "../../collections/worked.json";
-import Button from "../button.astro";
-import Work from "../work.astro";
+const { prefixLocale = false, worked } = Astro.props;
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+import Button from "../button.astro";
+import Work from "../work.astro";
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">

@@ -1,6 +1,5 @@
 ---
-const { prefixLocale = false } = Astro.props;
-import projects from "../../collections/projects.json";
+const { prefixLocale = false, projects } = Astro.props;
 import Button from "../button.astro";
 import Project from "../project.astro";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';

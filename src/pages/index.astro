@@ -5,6 +5,8 @@ import Worked from "@components/home/worked.astro";
 import Separator from "@components/home/separator.astro";
 import Writings from "@components/home/writings.astro";
 import Layout from "@layouts/main.astro";
+import WorkedCol from "@collections/en/worked.json";
+import ProjectsCol from "@collections/en/projects.json";
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -60,9 +62,9 @@ const prefixLocale = false;
   </div>
 
   <Separator text={t('projects.separator')}/>
-  <Projects prefixLocale={prefixLocale}/>
+  <Projects prefixLocale={prefixLocale} projects={ProjectsCol}/>
   <Separator text={t('worked.separator')} />
-  <Worked prefixLocale={prefixLocale}/>
+  <Worked prefixLocale={prefixLocale} worked={WorkedCol}/>
   <Separator text={t('writings.separator')} />
   <Writings prefixLocale={prefixLocale}/>
 </Layout>
