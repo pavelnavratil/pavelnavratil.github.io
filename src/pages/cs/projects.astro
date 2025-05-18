@@ -3,13 +3,17 @@ import projects from "@collections/projects.json";
 import PageHeading from "@components/page-heading.astro";
 import Project from "@components/project.astro";
 import Layout from "@layouts/main.astro";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const prefixLocale = true;
 ---
 
-<Layout language="cs" title="My Personal Projects">
+<Layout language="cs" title={t('projects.title')} prefixLocale={prefixLocale}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
-      title="My Personal Projects"
-      description="Here are some of my current personal projects I'm working on."
+      title={t('projects.title')}
+      description={t('projects.desc')}
     />
 
     <div

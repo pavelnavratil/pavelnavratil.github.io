@@ -1,13 +1,17 @@
 ---
 import PageHeading from "@components/page-heading.astro";
 import Layout from "@layouts/main.astro";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const prefixLocale = true;
 ---
 
-<Layout language="cs" title="Who I Am">
+<Layout language="cs" title={t('who.title')} prefixLocale={prefixLocale}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
-      title="Who I Am"
-      description="Hi 👋"
+      title={t('who.title')}
+      description={t('who.desc')}
     />
 
     <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">About</h2>

@@ -20,30 +20,26 @@ const prefixLocale = true;
         <h1
           class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
         >
-          Dobrý den,
-          <br class="hidden lg:block"/>
-          jmenuji se Pavel
+          Dobrý den, jmenuji se Pavel.
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          I'm an accomplished explorer, 
+          Jsem zkušený objevitel,
           <br class="hidden lg:block"/>
-          a full stack web developer with a passion for Salesforce. 
+          a full stack webový vývojář se zájmem o Salesforce.
         </p>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          Layered by outdoor, travel, adventure, and bike.
+          Mám rád outdoor, cestování, dobrodružství a kolo.
         </p>
         <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
-          I can help you out with:
+          Můžu vám pomoci s:
         </p>
         <ul
           class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
         >
           <li>Salesforce Development</li>
           <li>Salesforce Architecture</li>
-          <li>Node.js Development</li>
-          <li>React.js Development</li>
           <li>Website Design</li>
-          <li>and more...</li>
+          <li>a více...</li>
         </ul>
         {prefixLocale ? <Button text={t('nav.what')} link={`/${lang}/what/`} /> : <Button text={t('nav.what')} link={`/what/`} />}
       </div>
@@ -64,10 +60,10 @@ const prefixLocale = true;
     </div>
   </div>
 
-  <Separator text="Check out my personal projects" />
+  <Separator text={t('projects.separator')} />
   <Projects prefixLocale={prefixLocale}/>
-  <Separator text="Check out my work projects" />
+  <Separator text={t('worked.separator')} />
   <Worked prefixLocale={prefixLocale}/>
-  <Separator text="Some of my thoughts" />
+  <Separator text={t('writings.separator')} />
   <Writings prefixLocale={prefixLocale}/>
 </Layout>

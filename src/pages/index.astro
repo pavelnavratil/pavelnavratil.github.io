@@ -59,10 +59,10 @@ const prefixLocale = false;
     </div>
   </div>
 
-  <Separator text="Check out my personal projects" />
+  <Separator text={t('projects.separator')}/>
   <Projects prefixLocale={prefixLocale}/>
-  <Separator text="Check out my work projects" />
+  <Separator text={t('worked.separator')} />
   <Worked prefixLocale={prefixLocale}/>
-  <Separator text="Some of my thoughts" />
+  <Separator text={t('writings.separator')} />
   <Writings prefixLocale={prefixLocale}/>
 </Layout>

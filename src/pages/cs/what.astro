@@ -5,13 +5,17 @@ import experiences from "@collections/experiences.json";
 import AboutExperience from "@components/about-experience.astro";
 import PageHeading from "@components/page-heading.astro";
 import Layout from "@layouts/main.astro";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const prefixLocale = true;
 ---
 
-<Layout language="cs" title="What I Do">
+<Layout language="cs" title={t('what.title')} prefixLocale={prefixLocale}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
-      title="What I Do"
-      description="Hi 👋, I'm an accomplished explorer, a full stack web developer with a passion for Salesforce."
+      title={t('what.title')}
+      description={t('what.desc')}
     />
 
     <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Short bio</h2>
