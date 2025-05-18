@@ -1,4 +1,14 @@
 [
+  {
+    "name": "Salesforce Certified Platform Developer I",
+    "description": "Certified Platform Developer I developers understand how to develop and deploy custom business logic and custom interfaces using the programmatic capabilities of the Lightning Platform. They know when to use declarative versus programmatic methods, and can extend the Lightning Platform using Apex and Visualforce.",
+    "issueDate": "October 2024",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "5074102",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperi",
+    "credentialBadge": "/assets/images/certifications/badges/platformdeveloperi.png",
+    "category": "Developer"
+  },
 	{
 		"name": "Salesforce Certified AI Associate",
 		"description": "The Salesforce AI Associate credential is designed for individuals who may have knowledge of AI, whether they are beginners or individuals with more experience. This certification will validate foundational skills in ethical and responsible handling of data as they apply to AI in CRM.",

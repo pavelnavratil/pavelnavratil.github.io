@@ -4,11 +4,5 @@
 		"description": "My blog about Salesforce Development and Architecture.",
 		"image": "/assets/images/projects/eloquentforce.jpg",
 		"url": "https://eloquentforce.com"
-	},
-	{
-		"name": "Eloquent Components",
-		"description": "Check out my Lightning Web Component library.",
-		"image": "/assets/images/projects/eloquentcomponents.jpg",
-		"url": "https://eloquentcomponents.com"
 	}
 ]

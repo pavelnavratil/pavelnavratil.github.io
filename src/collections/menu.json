@@ -1,26 +1,26 @@
 [
 	{
-		"name": "Intro",
+		"key": "home",
 		"url": "/"
 	},
 	{
-		"name": "Blog",
+		"key": "posts",
 		"url": "/posts"
 	},
 	{
-		"name": "My Projects",
+		"key": "projects",
 		"url": "/projects"
 	},
 	{
-		"name": "My Work",
+		"key": "worked",
 		"url": "/worked"
 	},
 	{
-		"name": "What I Do",
+		"key": "what",
 		"url": "/what"
 	},
 	{
-		"name": "Who I Am",
+		"key": "who",
 		"url": "/who"
 	}
 ]
