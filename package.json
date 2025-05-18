@@ -10,23 +10,21 @@
 		"astro": "astro",
 		"check": "biome check --apply-unsafe ."
 	},
-	"devDependencies": {
-		"@astrojs/check": "^0.9.4",
-		"@biomejs/biome": "1.9.4",
-		"@tailwindcss/typography": "^0.5.16",
-		"astro": "^5.4.3",
-		"tailwindcss": "^4.0.13",
-		"typescript": "^5.7.3"
-	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@tailwindcss/vite": "^4.0.13",
-		"astro": "^5.4.3",
-		"typescript": "^5.7.3"
+		"astro": "^5.7.13",
+		"typescript": "^5.4.5"
 	},
-	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-	"main": "index.js",
+	"devDependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/tailwind": "^6.0.2",
+		"@biomejs/biome": "1.7.3",
+		"@tailwindcss/typography": "^0.5.13",
+		"astro": "^5.7.13",
+		"tailwindcss": "^3.4.3",
+		"typescript": "^5.4.5"
+	},
 	"repository": "https://github.com/pavelnavratil/pavelnavratil.github.io.git",
-	"author": "Pavel Navratil <navratilpavel@users.noreply.github.com>",
-	"license": "MIT"
+	"author": "Pavel Navratil <navratil@inp.cz>",
+	"packageManager": "pnpm@9.12.2"
 }
