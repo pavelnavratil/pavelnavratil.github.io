@@ -9,8 +9,8 @@
 	{
 		"dates": "Nov 2018 - Dec 2018",
         "company": "AspectWorks, s.r.o.",
-        "name": "Aplikace pro merchandizéry",
-		"description": "Mobilní aplikace pro tým merchandizérů postavená uvnitř Salesforce App s reporty pro management, která umožňuje týmu merchandizérů kontrolovat obchody podle předem definovaných tras.",
+        "name": "Aplikace pro prodejce",
+		"description": "Mobilní aplikace pro tým prodejců postavený uvnitř Salesforce mobilní aplikace s reporty pro management, která umožňuje týmu prodejců kontrolovat obchodní místa podle předem definovaných tras.",
 		"image": "/assets/images/worked/merchandiser.jpg"
 	}
 ]
