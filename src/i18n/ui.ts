@@ -27,6 +27,9 @@ export const ui: Translation = {
     "nav.worked": "My Work",
     "nav.projects": "My Projects",
     "nav.posts": "Blog",
+    "nav.thoughts": "View All My Thoughts",
+    "nav.allWork": "View All Work I Was Participated In",
+    "nav.allProjects": "View All My Projects",
   },
   cs: {
     "nav.home": "Domů",
@@ -35,5 +38,8 @@ export const ui: Translation = {
     "nav.worked": "Moje práce",
     "nav.projects": "Moje projekty",
     "nav.posts": "Blog",
+    "nav.thoughts": "Všechny mé myšlenky",
+    "nav.allWork": "Zobraz všechny práce, kterých jsem se zúčastnil",
+    "nav.allProjects": "Zobraz všechny mé projekty",
   },
 } as const;

@@ -2,6 +2,9 @@
 import worked from "../../collections/worked.json";
 import Button from "../button.astro";
 import Work from "../work.astro";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -30,6 +33,6 @@ import Work from "../work.astro";
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    <Button text="View All Work I Was Participated In" link="/worked" />
+    <Button text={t('nav.allWork')} link={`/${lang}/worked/`} />
   </div>
 </section>

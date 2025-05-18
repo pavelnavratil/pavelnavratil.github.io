@@ -2,6 +2,9 @@
 import projects from "../../collections/projects.json";
 import Button from "../button.astro";
 import Project from "../project.astro";
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -31,6 +34,6 @@ import Project from "../project.astro";
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    <Button text="View All My Projects" link="/projects" />
+    <Button text={t('nav.allProjects')} link={`/${lang}/projects/`} />
   </div>
 </section>
