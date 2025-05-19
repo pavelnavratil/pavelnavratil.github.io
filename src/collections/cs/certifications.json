@@ -31,7 +31,7 @@
 	},
     {
 		"name": "Salesforce Certified Platform App Builder",
-		"description": "The Salesforce Platform App Builder credential is designed for those who can demonstrate skills and knowledge in designing, building, and implementing custom applications using the declarative customization capabilities of the Salesforce Platform.",
+		"description": "Certifikace Salesforce Platform App Builder je určena těm, kteří mohou prokázat dovednosti a znalosti v oblasti navrhování, vytváření a implementace vlastních aplikací pomocí deklarativních schopností platformy Salesforce.",
         "issueDate": "Listopad 2023",
         "issuingOrg": "Salesforce",
         "credentialNo": "3817844",
@@ -41,7 +41,7 @@
 	},
     {
 		"name": "Salesforce Certified Administrator",
-		"description": "The Salesforce Data Architect credential is designed for those who assess the architecture environment and requirements and design sound, scalable, and high-performing solutions on the Salesforce Platform as it pertains to enterprise data management.",
+		"description": "Certifikace Salesforce Administrator je určena těm, kteří mají zkušenosti se Salesforce a neustále hledají způsoby, jak pomoci svým společnostem získat ještě více z dalších funkcí a schopností.",
         "issueDate": "Červenec 2022",
         "issuingOrg": "Salesforce",
         "credentialNo": "2442277",
@@ -51,7 +51,7 @@
 	},
     {
 		"name": "Salesforce Certified OmniStudio Developer",
-		"description": "The Salesforce OmniStudio Developer credential is intended for individuals who have knowledge, skills, and experience developing cloud applications using OmniStudio declarative development tools.",
+		"description": "Certifikace Salesforce OmniStudio Developer je určena jednotlivcům, kteří mají znalosti, dovednosti a zkušenosti s vývojem cloudových aplikací pomocí nástrojů pro deklarativní vývoj OmniStudio.",
         "issueDate": "Březen 2021",
         "issuingOrg": "Salesforce",
         "credentialNo": "52522624",
