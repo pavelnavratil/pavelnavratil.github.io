@@ -1,15 +1,19 @@
 ---
 import { getCollection } from 'astro:content';
-import { getLangFromUrl } from '@i18n/utils';
+import { getLangFromUrl, useTranslatedPath } from '@i18n/utils';
 const currentLocale = getLangFromUrl(Astro.url);
 const allPosts = await getCollection("blog");
 const { count } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 {
   allPosts.slice(0, count).map((post) => {
     const [lang, ...slug] = post.id.split('/');
-    const link = `/${lang}/blog/${slug}`;
+    const postLink = `/post/${slug}`;
+    const link = translatePath(postLink);
+    
     if(lang === currentLocale){
       return (
       <div
