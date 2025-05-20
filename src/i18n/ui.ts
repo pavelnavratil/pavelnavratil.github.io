@@ -12,6 +12,8 @@ type Languages = {
 
 export type { Locale, Translation, Languages };
 
+export const showDefaultLang = false;
+
 export const languages: Languages = {
   en: "English",
   cs: "Čeština",

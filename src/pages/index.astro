@@ -7,12 +7,13 @@ import Writings from "@components/home/writings.astro";
 import Layout from "@layouts/main.astro";
 import WorkedCol from "@collections/en/worked.json";
 import ProjectsCol from "@collections/en/projects.json";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { showDefaultLang } from '@i18n/ui';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const prefixLocale = false;
+const translatePath = useTranslatedPath(lang);
 ---
-<Layout language={lang} title="Navrátil Pavel" prefixLocale={prefixLocale}>
+<Layout language={lang} title="Navrátil Pavel" prefixLocale={showDefaultLang}>
   <div
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
@@ -42,7 +43,7 @@ const prefixLocale = false;
           <li>Website Design</li>
           <li>and more...</li>
         </ul>
-        {prefixLocale ? <Button text={t('nav.what')} link={`/${lang}/what/`} /> : <Button text={t('nav.what')} link={`/what/`} />}
+       <Button text={t('nav.what')} link={translatePath('/what/')} />
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
@@ -62,9 +63,9 @@ const prefixLocale = false;
   </div>
 
   <Separator text={t('projects.separator')}/>
-  <Projects prefixLocale={prefixLocale} projects={ProjectsCol}/>
+  <Projects prefixLocale={showDefaultLang} projects={ProjectsCol}/>
   <Separator text={t('worked.separator')} />
-  <Worked prefixLocale={prefixLocale} worked={WorkedCol}/>
+  <Worked prefixLocale={showDefaultLang} worked={WorkedCol}/>
   <Separator text={t('writings.separator')} />
-  <Writings prefixLocale={prefixLocale}/>
+  <Writings prefixLocale={showDefaultLang}/>
 </Layout>

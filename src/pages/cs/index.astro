@@ -7,10 +7,12 @@ import Writings from "@components/home/writings.astro";
 import Layout from "@layouts/main.astro";
 import WorkedCol from "@collections/cs/worked.json";
 import ProjectsCol from "@collections/cs/projects.json";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { showDefaultLang } from '@i18n/ui';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const prefixLocale = true;
+const translatePath = useTranslatedPath(lang);
+const prefixLocale = !showDefaultLang;
 ---
 
 <Layout language={lang} title="Navrátil Pavel" prefixLocale={prefixLocale}>
@@ -43,7 +45,7 @@ const prefixLocale = true;
           <li>Webový design</li>
           <li>a více...</li>
         </ul>
-        {prefixLocale ? <Button text={t('nav.what')} link={`/${lang}/what/`} /> : <Button text={t('nav.what')} link={`/what/`} />}
+        <Button text={t('nav.what')} link={translatePath('/what/')} />
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
