@@ -1,10 +1,11 @@
 ---
-const { prefixLocale = false, projects } = Astro.props;
 import Button from "../button.astro";
 import Project from "../project.astro";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
+const { projects } = Astro.props;
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -34,6 +35,6 @@ const t = useTranslations(lang);
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    {prefixLocale ? <Button text={t('nav.allProjects')} link={`/${lang}/projects/`} /> : <Button text={t('nav.allProjects')} link={`/projects/`} />}
+    <Button text={t('nav.allProjects')} link={translatePath('/projects/')} />
   </div>
 </section>

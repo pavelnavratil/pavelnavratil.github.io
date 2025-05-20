@@ -1,8 +1,9 @@
 ---
-const { prefixLocale = false, worked } = Astro.props;
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
+const { worked } = Astro.props;
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 import Button from "../button.astro";
 import Work from "../work.astro";
 ---
@@ -33,6 +34,6 @@ import Work from "../work.astro";
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    {prefixLocale ? <Button text={t('nav.allWork')} link={`/${lang}/worked/`} /> : <Button text={t('nav.allWork')} link={`/worked/`} />}
+    <Button text={t('nav.allWork')} link={translatePath('/worked/')} />
   </div>
 </section>
