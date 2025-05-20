@@ -9,7 +9,6 @@ const {language, title} = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    
     <script is:inline>
       if (typeof Storage !== 'undefined') {
         if (
@@ -31,6 +30,7 @@ const {language, title} = Astro.props;
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body>
+    <SquareLines />
     <Header language={language}/>
     <slot />
     <Footer />
