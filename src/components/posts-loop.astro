@@ -9,7 +9,8 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 {
-  allPosts.slice(0, count).map((post) => {
+  //TODO add .slice(0, count) but only for filtered posts by lang
+  allPosts.map((post) => {
     const [lang, ...slug] = post.id.split('/');
     const postLink = `/post/${slug}`;
     const link = translatePath(postLink);

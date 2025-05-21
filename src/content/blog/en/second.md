@@ -1,5 +1,5 @@
 ---
-title: My first post in english
+title: My second post in english
 description: Testing blog feature.
 dateFormatted: August 1th, 2024
 ---
