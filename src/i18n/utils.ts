@@ -2,6 +2,9 @@ import { ui, defaultLang, showDefaultLang } from '@i18n/ui';
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
+    if (path.includes("/post/")){
+      return `/${l}${path}`;
+    }
     return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`
   }
 }
