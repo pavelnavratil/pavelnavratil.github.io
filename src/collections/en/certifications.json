@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Salesforce Certified Platform Developer II",
+    "description": "The Salesforce Platform Developer II (PDII) credential is designed for those who have the skills and experience in advanced programmatic capabilities of the Salesforce Platform and data modeling to develop complex business logic and interfaces.",
+    "issueDate": "July 2025",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "6333258",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperii",
+    "credentialBadge": "/assets/images/certifications/badges/platformdeveloperii.png",
+    "category": "Developer"
+  },
+  {
+    "name": "Salesforce Certified Platform Developer I",
+    "description": "Certified Platform Developer I developers understand how to develop and deploy custom business logic and custom interfaces using the programmatic capabilities of the Lightning Platform. They know when to use declarative versus programmatic methods, and can extend the Lightning Platform using Apex and Visualforce.",
+    "issueDate": "October 2024",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "5074102",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperi",
+    "credentialBadge": "/assets/images/certifications/badges/platformdeveloperi.png",
+    "category": "Developer"
+  },
+  {
+    "name": "Salesforce Certified AI Associate",
+    "description": "The Salesforce AI Associate credential is designed for individuals who may have knowledge of AI, whether they are beginners or individuals with more experience. This certification will validate foundational skills in ethical and responsible handling of data as they apply to AI in CRM.",
+    "issueDate": "May 2024",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "4531477",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/aiassociate",
+    "credentialBadge": "/assets/images/certifications/badges/aiassociate.png",
+    "category": "Associate"
+  },
+  {
+    "name": "Salesforce Certified Data Architect",
+    "description": "The Salesforce Data Architect credential is designed for those who assess the architecture environment and requirements and design sound, scalable, and high-performing solutions on the Salesforce Platform as it pertains to enterprise data management.",
+    "issueDate": "November 2023",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "3791768",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/dataarchitect",
+    "credentialBadge": "/assets/images/certifications/badges/dataarchitect.png",
+    "category": "Architect"
+  },
+  {
+    "name": "Salesforce Certified Platform App Builder",
+    "description": "The Salesforce Platform App Builder credential is designed for those who can demonstrate skills and knowledge in designing, building, and implementing custom applications using the declarative customization capabilities of the Salesforce Platform.",
+    "issueDate": "November 2023",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "3817844",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformappbuilder",
+    "credentialBadge": "/assets/images/certifications/badges/platformappbuilder.png",
+    "category": "Developer"
+  },
+  {
+    "name": "Salesforce Certified Administrator",
+    "description": "The Salesforce Administrator credential is designed for those who have experience with Salesforce and continuously look for ways to assist their companies in getting even more from additional features and capabilities.",
+    "issueDate": "July 2022",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "2442277",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/administrator",
+    "credentialBadge": "/assets/images/certifications/badges/administrator.png",
+    "category": "Administrator"
+  },
+  {
+    "name": "Salesforce Certified OmniStudio Developer",
+    "description": "The Salesforce OmniStudio Developer credential is intended for individuals who have knowledge, skills, and experience developing cloud applications using OmniStudio declarative development tools.",
+    "issueDate": "March 2021",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "52522624",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/omnistudiodeveloper",
+    "credentialBadge": "/assets/images/certifications/badges/omnistudiodeveloper.png",
+    "category": "Developer"
+  }
+]

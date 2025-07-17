@@ -5,13 +5,15 @@ import Worked from "@components/home/worked.astro";
 import Separator from "@components/home/separator.astro";
 import Writings from "@components/home/writings.astro";
 import Layout from "@layouts/main.astro";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import WorkedCol from "@collections/cs/worked.json";
+import ProjectsCol from "@collections/cs/projects.json";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const prefixLocale = true;
+const translatePath = useTranslatedPath(lang);
 ---
 
-<Layout language={lang} title="Navrátil Pavel" prefixLocale={prefixLocale}>
+<Layout language={lang} title="Navrátil Pavel">
   <div
     class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
   >
@@ -23,12 +25,12 @@ const prefixLocale = true;
           Dobrý den, jmenuji se Pavel.
         </h1>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          Jsem zkušený objevitel,
+          Jsem zkušený dobrodruh,
           <br class="hidden lg:block"/>
-          a full stack webový vývojář se zájmem o Salesforce.
+          a plnohodnotný webový vývojář se zájmem o Salesforce.
         </p>
         <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-          Mám rád outdoor, cestování, dobrodružství a kolo.
+          Formovaný přírodou, cestováním, dobrodružstvím a kolem.
         </p>
         <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
           Můžu vám pomoci s:
@@ -41,7 +43,7 @@ const prefixLocale = true;
           <li>Webový design</li>
           <li>a více...</li>
         </ul>
-        {prefixLocale ? <Button text={t('nav.what')} link={`/${lang}/what/`} /> : <Button text={t('nav.what')} link={`/what/`} />}
+        <Button text={t('nav.what')} link={translatePath('/what/')} />
       </div>
       <div
         class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
@@ -61,9 +63,9 @@ const prefixLocale = true;
   </div>
 
   <Separator text={t('projects.separator')} />
-  <Projects prefixLocale={prefixLocale}/>
+  <Projects projects={ProjectsCol}/>
   <Separator text={t('worked.separator')} />
-  <Worked prefixLocale={prefixLocale}/>
+  <Worked worked={WorkedCol}/>
   <Separator text={t('writings.separator')} />
-  <Writings prefixLocale={prefixLocale}/>
+  <Writings />
 </Layout>

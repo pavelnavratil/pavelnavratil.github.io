@@ -1,14 +1,14 @@
 ---
-import certifications from "@collections/certifications.json";
-import Certificate from "@components/certificate.astro";
-import experiences from "@collections/experiences.json";
-import AboutExperience from "@components/about-experience.astro";
-import PageHeading from "@components/page-heading.astro";
-import Layout from "@layouts/main.astro";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const prefixLocale = false;
+import certifications from '@collections/en/certifications.json'
+import Certificate from '@components/certificate.astro'
+import experiences from '@collections/en/experiences.json'
+import AboutExperience from '@components/about-experience.astro'
+import PageHeading from '@components/page-heading.astro'
+import Layout from '@layouts/main.astro'
+import { getLangFromUrl, useTranslations } from '@i18n/utils'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const prefixLocale = false
 ---
 
 <Layout language="en" title={t('what.title')} prefixLocale={prefixLocale}>
@@ -22,33 +22,32 @@ const prefixLocale = false;
     <p
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
-    Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging Mentor. Relentless.
+      Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging Mentor. Relentless.
     </p>
 
     <h2
-    class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
-  >
-    Certifications
-  </h2>
-  <div
-  class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
-  >
-    {
-      certifications.map((certificate) => {
-        return (
-          <Certificate
-            name={certificate.name}
-            description={certificate.description}
-            image={certificate.credentialBadge}
-            url={certificate.credentialUrl}
-            issueDate={certificate.issueDate}
-            category={certificate.category}
-          />
-        )
-      })
-    }
-  </div>
-    
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+    >
+      Certifications
+    </h2>
+    <div
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+    >
+      {
+        certifications.map((certificate) => {
+          return (
+            <Certificate
+              name={certificate.name}
+              description={certificate.description}
+              image={certificate.credentialBadge}
+              url={certificate.credentialUrl}
+              issueDate={certificate.issueDate}
+              category={certificate.category}
+            />
+          )
+        })
+      }
+    </div>
     <!--
     <h2
       class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
@@ -90,12 +89,12 @@ const prefixLocale = false;
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
       If you want to stay up to date with my work be sure to <a
-        href="https://twitter.com/ccikai"
-        target="_blank"
-        class="text-indigo-600 underline">follow me on twitter</a
-      >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
-        >email</a
-      > and I'll be sure to get back to you.
+      href="https://twitter.com/ccikai"
+      target="_blank"
+      class="text-indigo-600 underline">follow me on twitter</a
+    >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
+    >email</a
+    > and I'll be sure to get back to you.
     </p>-->
   </section>
 </Layout>

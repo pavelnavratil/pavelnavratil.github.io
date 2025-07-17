@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Salesforce Certified Platform Developer II",
+    "description": "Certifikovaný Platform Developer II vývojáři rozumí a mají zkušenosti s pokročilými programovými možnostmi platformy Salesforce a s modelování dat pro vývoj složité obchodní logiky a rozhraní.",
+    "issueDate": "Červenec 2025",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "6333258",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperii",
+    "credentialBadge": "/assets/images/certifications/badges/platformdeveloperii.png",
+    "category": "Vývojář"
+  },
+  {
+    "name": "Salesforce Certified Platform Developer I",
+    "description": "Certifikovaný Platform Developer I vývojáři rozumí tomu, jak vyvíjet a nasazovat vlastní obchodní logiku pomocí vývojářských možností platformy Lightning. Vědí, kdy použít deklarativní versus programové metody, a mohou rozšířit platformu Lightning pomocí Apexu a Visualforce.",
+    "issueDate": "Říjen 2024",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "5074102",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperi",
+    "credentialBadge": "/assets/images/certifications/badges/platformdeveloperi.png",
+    "category": "Vývojář"
+  },
+  {
+    "name": "Salesforce Certified AI Associate",
+    "description": "Certifikace Salesforce AI Associate je určena jednotlivcům, kteří mohou mít znalosti o AI, ať už jsou začátečníci nebo jednotlivci s většími zkušenostmi. Tato certifikace ověří základní dovednosti v etickém a odpovědném zacházení s daty, jak se vztahují na AI v CRM.",
+    "issueDate": "Květen 2024",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "4531477",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/aiassociate",
+    "credentialBadge": "/assets/images/certifications/badges/aiassociate.png",
+    "category": "Spolupracovník"
+  },
+  {
+    "name": "Salesforce Certified Data Architect",
+    "description": "Certifikace Salesforce Data Architect je určena těm, kteří navrhují architektonické řešení, hodnotí požadavky a navrhují zdravá, škálovatelná a vysoce výkonná řešení na platformě Salesforce, pokud jde o podnikové řízení dat.",
+    "issueDate": "Listopad 2023",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "3791768",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/dataarchitect",
+    "credentialBadge": "/assets/images/certifications/badges/dataarchitect.png",
+    "category": "Architekt"
+  },
+  {
+    "name": "Salesforce Certified Platform App Builder",
+    "description": "Certifikace Salesforce Platform App Builder je určena těm, kteří mohou prokázat dovednosti a znalosti v oblasti navrhování, vytváření a implementace vlastních aplikací pomocí deklarativních schopností platformy Salesforce.",
+    "issueDate": "Listopad 2023",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "3817844",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformappbuilder",
+    "credentialBadge": "/assets/images/certifications/badges/platformappbuilder.png",
+    "category": "Vývojář"
+  },
+  {
+    "name": "Salesforce Certified Administrator",
+    "description": "Certifikace Salesforce Administrator je určena těm, kteří mají zkušenosti se Salesforce a neustále hledají způsoby, jak pomoci svým společnostem získat ještě více z dalších funkcí a schopností.",
+    "issueDate": "Červenec 2022",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "2442277",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/administrator",
+    "credentialBadge": "/assets/images/certifications/badges/administrator.png",
+    "category": "Administrátor"
+  },
+  {
+    "name": "Salesforce Certified OmniStudio Developer",
+    "description": "Certifikace Salesforce OmniStudio Developer je určena jednotlivcům, kteří mají znalosti, dovednosti a zkušenosti s vývojem cloudových aplikací pomocí nástrojů pro deklarativní vývoj OmniStudio.",
+    "issueDate": "Březen 2021",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "52522624",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/omnistudiodeveloper",
+    "credentialBadge": "/assets/images/certifications/badges/omnistudiodeveloper.png",
+    "category": "Vývojář"
+  }
+]

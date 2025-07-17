@@ -1,15 +1,15 @@
 ---
-const { prefixLocale = false } = Astro.props;
 import menus from "@collections/menu.json";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 {
   menus.map((menu) => {
     const link = menu.url;
     const translationKey = `nav.${menu.key}`;
-    const href = prefixLocale ? `/${lang}${link}/`: `${link}/`;
+    const href = translatePath(link);
     
     return (
     <a

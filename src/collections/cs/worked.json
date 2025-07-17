@@ -1,0 +1,16 @@
+[
+	{
+		"dates": "Dec 2018 - Nov 2023",
+        "company": "Gen",
+        "name": "Uživatelské rozhraní zákaznického servisu",
+		"description": "Uživatelské rozhraní postavené na vlastních Salesforce Lightning komponentách, které umožňují zobrazovat data uvnitř Salesforce. Data pocházejí ze dvou externích serverů připojených k Salesforce prostřednictvím REST API.",
+		"image": "/assets/images/worked/csui.jpg"
+	},
+	{
+		"dates": "Nov 2018 - Dec 2018",
+        "company": "AspectWorks, s.r.o.",
+        "name": "Aplikace pro prodejce",
+		"description": "Mobilní aplikace pro tým prodejců postavený uvnitř Salesforce mobilní aplikace s reporty pro management, která umožňuje týmu prodejců kontrolovat obchodní místa podle předem definovaných tras.",
+		"image": "/assets/images/worked/merchandiser.jpg"
+	}
+]
