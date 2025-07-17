@@ -2,13 +2,13 @@
 import { languages } from '../i18n/ui';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+const pageLang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(pageLang);
 ---
-<div class="bg-gray-200 text-sm text-gray-500 leading-none border-2 border-gray-200 rounded-full inline-flex">
+<div class="bg-gray-200 dark:bg-gray-600 text-sm leading-none border-2 border-gray-200 dark:border-gray-600 rounded-full inline-flex">
   {Object.entries(languages).map(([lang, label]) => (
-    <button class="inline-flex items-center transition-colors duration-300 ease-in focus:outline-none hover:text-blue-400 focus:text-blue-400 rounded-l-full px-2 py-1" id="grid">
-      <a href={translatePath('/', lang)}>{label}</a>
+    <button class="inline-flex items-center transition-colors duration-300 ease-in focus:outline-none hover:text-neutral-900 dark:hover:text-white rounded-l-full px-2 py-1" id="grid">
+      <a href={translatePath('/', lang)} class={pageLang === lang ? 'text-neutral-900 dark:text-white' : ''}>{label}</a>
     </button>
   ))}
 </div>
