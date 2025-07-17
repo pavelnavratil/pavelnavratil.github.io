@@ -7,9 +7,15 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 }
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as keyof typeof ui;
+  const [first, second] = url.pathname.split('/');
+  if (second in ui) return second as keyof typeof ui;
   return defaultLang;
+}
+
+export function getPathWithoutLanguage(url: URL) {
+  const [first, second, third, fourth] = url.pathname.split('/');
+  if (second in ui) return '/'+third + (fourth ? `/${fourth}` : '');
+  return '/'+second + (third ? `/${third}` : '');
 }
 
 export function useTranslations(lang: keyof typeof ui) {
