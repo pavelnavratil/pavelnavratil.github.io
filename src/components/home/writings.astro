@@ -1,6 +1,6 @@
 ---
 import Button from "../button.astro";
-import PostsLoop from "../posts-loop.astro";
+import PostsLoop from "../blog/slice-loop.astro";
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -22,7 +22,7 @@ const translatePath = useTranslatedPath(lang);
       class="flex flex-col items-start justify-start md:flex-row md:space-x-7"
     >
       <div class="w-full md:w-2/3 space-y-7">
-        <PostsLoop count="3" />
+        <PostsLoop count="2" />
 
         <div class="flex items-center justify-center w-full py-5">
           <Button text={t('nav.thoughts')} link={translatePath('/posts/')} />

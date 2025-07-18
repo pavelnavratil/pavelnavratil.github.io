@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+import { getLangFromUrl } from '@i18n/utils';
+import Item from "../blog/item.astro";
+const pageLang = getLangFromUrl(Astro.url);
+const { count } = Astro.props;
+const allCzechPosts = await getCollection("czech-posts");
+const allEnglishPosts = await getCollection("english-posts");
+const allPosts = pageLang === 'en' ? allEnglishPosts : allCzechPosts;
+const orderedPosts = (await allPosts).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = orderedPosts.slice(0, count);
+---
+{posts.map(post => (
+<Item post={post} />
+  ))}
