@@ -1,7 +1,7 @@
 [
   {
     "name": "Salesforce Certified Platform Developer II",
-    "description": "The Salesforce Platform Developer II (PDII) credential is designed for those who have the skills and experience in advanced programmatic capabilities of the Salesforce Platform and data modeling to develop complex business logic and interfaces.",
+    "description": "Certified Platform Developer II (PDII) developers are experts in the advanced programmatic capabilities of the Salesforce Platform, as well as using data modeling to develop complex business logic and interfaces.",
     "issueDate": "July 2025",
     "issuingOrg": "Salesforce",
     "credentialNo": "6333258",
@@ -10,8 +10,8 @@
     "category": "Developer"
   },
   {
-    "name": "Salesforce Certified Platform Developer I",
-    "description": "Certified Platform Developer I developers understand how to develop and deploy custom business logic and custom interfaces using the programmatic capabilities of the Lightning Platform. They know when to use declarative versus programmatic methods, and can extend the Lightning Platform using Apex and Visualforce.",
+    "name": "Salesforce Certified Platform Developer",
+    "description": "Certified Platform Developers understand how to develop and deploy custom business logic and custom interfaces using the programmatic capabilities of the Lightning Platform. They can also extend the Lightning Platform using Apex and Visualforce.",
     "issueDate": "October 2024",
     "issuingOrg": "Salesforce",
     "credentialNo": "5074102",
@@ -30,8 +30,8 @@
     "category": "Associate"
   },
   {
-    "name": "Salesforce Certified Data Architect",
-    "description": "The Salesforce Data Architect credential is designed for those who assess the architecture environment and requirements and design sound, scalable, and high-performing solutions on the Salesforce Platform as it pertains to enterprise data management.",
+    "name": "Salesforce Certified Platform Data Architect",
+    "description": "Certified Platform Data Architects are experts at designing sound, scalable, high-performing solutions on the Salesforce Platform that are tailored for enterprise data management.",
     "issueDate": "November 2023",
     "issuingOrg": "Salesforce",
     "credentialNo": "3791768",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Salesforce Certified Platform App Builder",
-    "description": "The Salesforce Platform App Builder credential is designed for those who can demonstrate skills and knowledge in designing, building, and implementing custom applications using the declarative customization capabilities of the Salesforce Platform.",
+    "description": "Certified Platform App Builders have the skills and knowledge to design, build, and implement custom applications using the declarative customization capabilities of the Salesforce Platform.",
     "issueDate": "November 2023",
     "issuingOrg": "Salesforce",
     "credentialNo": "3817844",
@@ -50,8 +50,8 @@
     "category": "Developer"
   },
   {
-    "name": "Salesforce Certified Administrator",
-    "description": "The Salesforce Administrator credential is designed for those who have experience with Salesforce and continuously look for ways to assist their companies in getting even more from additional features and capabilities.",
+    "name": "Salesforce Certified Platform Administrator",
+    "description": "Certified Platform Administrators are Salesforce pros who are always looking for ways to help their companies get even more out of the Salesforce Platform through additional features and capabilities.",
     "issueDate": "July 2022",
     "issuingOrg": "Salesforce",
     "credentialNo": "2442277",
@@ -60,8 +60,8 @@
     "category": "Administrator"
   },
   {
-    "name": "Salesforce Certified OmniStudio Developer",
-    "description": "The Salesforce OmniStudio Developer credential is intended for individuals who have knowledge, skills, and experience developing cloud applications using OmniStudio declarative development tools.",
+    "name": "Salesforce Certified Omnistudio Developer",
+    "description": "Certified Omnistudio Developers have hands-on experience designing and configuring cloud applications using various Omnistudio declarative development tools.",
     "issueDate": "March 2021",
     "issuingOrg": "Salesforce",
     "credentialNo": "52522624",

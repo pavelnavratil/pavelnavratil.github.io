@@ -1,7 +1,7 @@
 [
   {
     "name": "Salesforce Certified Platform Developer II",
-    "description": "Certifikovaný Platform Developer II vývojáři rozumí a mají zkušenosti s pokročilými programovými možnostmi platformy Salesforce a s modelování dat pro vývoj složité obchodní logiky a rozhraní.",
+    "description": "Vývojáři s touto certifikací jsou experti na pokročilé programové možnosti platformy Salesforce a také na využití datového modelování k vývoji komplexní obchodní logiky a rozhraní.",
     "issueDate": "Červenec 2025",
     "issuingOrg": "Salesforce",
     "credentialNo": "6333258",
@@ -10,8 +10,8 @@
     "category": "Vývojář"
   },
   {
-    "name": "Salesforce Certified Platform Developer I",
-    "description": "Certifikovaný Platform Developer I vývojáři rozumí tomu, jak vyvíjet a nasazovat vlastní obchodní logiku pomocí vývojářských možností platformy Lightning. Vědí, kdy použít deklarativní versus programové metody, a mohou rozšířit platformu Lightning pomocí Apexu a Visualforce.",
+    "name": "Salesforce Certified Platform Developer",
+    "description": "Certifikovaní vývojáři rozumí tomu jak vyvíjet a nasazovat vlastní obchodní logiku a vlastní rozhraní s využitím programových možností platformy Lightning. Mohou také platformu Lightning rozšiřovat pomocí Apexu a Visualforce.",
     "issueDate": "Říjen 2024",
     "issuingOrg": "Salesforce",
     "credentialNo": "5074102",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Salesforce Certified AI Associate",
-    "description": "Certifikace Salesforce AI Associate je určena jednotlivcům, kteří mohou mít znalosti o AI, ať už jsou začátečníci nebo jednotlivci s většími zkušenostmi. Tato certifikace ověří základní dovednosti v etickém a odpovědném zacházení s daty, jak se vztahují na AI v CRM.",
+    "description": "Tato certifikace je určena pro jednotlivce, kteří mají znalosti o umělé inteligenci, ať už jsou to začátečníci nebo zkušenější jedinci. Tato certifikace potvrdí základní dovednosti v etickém a zodpovědném nakládání s daty s využitím umělé inteligence v CRM.",
     "issueDate": "Květen 2024",
     "issuingOrg": "Salesforce",
     "credentialNo": "4531477",
@@ -30,8 +30,8 @@
     "category": "Spolupracovník"
   },
   {
-    "name": "Salesforce Certified Data Architect",
-    "description": "Certifikace Salesforce Data Architect je určena těm, kteří navrhují architektonické řešení, hodnotí požadavky a navrhují zdravá, škálovatelná a vysoce výkonná řešení na platformě Salesforce, pokud jde o podnikové řízení dat.",
+    "name": "Salesforce Certified Platform Data Architect",
+    "description": "Certifikovaní datoví architekti jsou experti na navrhování spolehlivých, škálovatelných a vysoce výkonných řešení na platformě Salesforce, která jsou přizpůsobena pro správu podnikových dat.",
     "issueDate": "Listopad 2023",
     "issuingOrg": "Salesforce",
     "credentialNo": "3791768",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Salesforce Certified Platform App Builder",
-    "description": "Certifikace Salesforce Platform App Builder je určena těm, kteří mohou prokázat dovednosti a znalosti v oblasti navrhování, vytváření a implementace vlastních aplikací pomocí deklarativních schopností platformy Salesforce.",
+    "description": "Certifikovaní tvůrci platformních aplikací mají dovednosti a znalosti pro návrh, tvorbu a implementaci vlastních aplikací s využitím deklarativních možností přizpůsobení platformy Salesforce.",
     "issueDate": "Listopad 2023",
     "issuingOrg": "Salesforce",
     "credentialNo": "3817844",
@@ -50,8 +50,8 @@
     "category": "Vývojář"
   },
   {
-    "name": "Salesforce Certified Administrator",
-    "description": "Certifikace Salesforce Administrator je určena těm, kteří mají zkušenosti se Salesforce a neustále hledají způsoby, jak pomoci svým společnostem získat ještě více z dalších funkcí a schopností.",
+    "name": "Salesforce Certified Platform Administrator",
+    "description": "Certifikovaní administrátoři jsou profesionálové, kteří neustále hledají způsoby jak pomoci svým firmám vytěžit z platformy Salesforce ještě více prostřednictvím dalších funkcí a možností.",
     "issueDate": "Červenec 2022",
     "issuingOrg": "Salesforce",
     "credentialNo": "2442277",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Salesforce Certified OmniStudio Developer",
-    "description": "Certifikace Salesforce OmniStudio Developer je určena jednotlivcům, kteří mají znalosti, dovednosti a zkušenosti s vývojem cloudových aplikací pomocí nástrojů pro deklarativní vývoj OmniStudio.",
+    "description": "Certifikovaní vývojáři Omnistudia mají praktické zkušenosti s návrhem a konfigurací cloudových aplikací pomocí různých deklarativních vývojových nástrojů Omnistudia.",
     "issueDate": "Březen 2021",
     "issuingOrg": "Salesforce",
     "credentialNo": "52522624",
