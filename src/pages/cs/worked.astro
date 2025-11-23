@@ -1,8 +1,7 @@
 ---
 import worked from "@collections/cs/worked.json";
-import PageHeading from "@components/page-heading.astro";
-import Work from "@components/work.astro";
 import Layout from "@layouts/main.astro";
+import WorkedBase from '@components/page/worked.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,26 +9,5 @@ const prefixLocale = true;
 ---
 
 <Layout language="cs" title={t('worked.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
-    <PageHeading
-      title={t('worked.title')}
-      description={t('worked.desc')}
-    />
-
-    <div
-      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
-    >
-      {
-        worked.map((work) => {
-          return (
-            <Work
-              name={work.name}
-              description={work.description}
-              image={work.image}
-            />
-          )
-        })
-      }
-    </div>
-  </section>
+  <WorkedBase worked={worked}/>
 </Layout>

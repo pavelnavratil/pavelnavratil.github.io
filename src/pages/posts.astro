@@ -1,7 +1,6 @@
 ---
-import PageHeading from "@components/page-heading.astro";
-import PostsLoop from "@components/blog/loop.astro";
 import Layout from "@layouts/main.astro";
+import PostsBase from '@components/page/posts.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,14 +8,5 @@ const prefixLocale = false;
 ---
 
 <Layout language="en" title={t('writings.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
-    <PageHeading
-      title={t('writings.title')}
-      description={t('writings.prelude')}
-    />
-
-    <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
-      <PostsLoop count="999999999" />
-    </div>
-  </section>
+  <PostsBase/>
 </Layout>
