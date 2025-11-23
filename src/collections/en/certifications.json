@@ -7,7 +7,8 @@
     "credentialNo": "6333258",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperii",
     "credentialBadge": "/assets/images/certifications/badges/platformdeveloperii.png",
-    "category": "Developer"
+    "category": "Developer",
+    "retiringOn": ""
   },
   {
     "name": "Salesforce Certified Platform Developer",
@@ -17,7 +18,8 @@
     "credentialNo": "5074102",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformdeveloperi",
     "credentialBadge": "/assets/images/certifications/badges/platformdeveloperi.png",
-    "category": "Developer"
+    "category": "Developer",
+    "retiringOn": ""
   },
   {
     "name": "Salesforce Certified AI Associate",
@@ -27,7 +29,8 @@
     "credentialNo": "4531477",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/aiassociate",
     "credentialBadge": "/assets/images/certifications/badges/aiassociate.png",
-    "category": "Associate"
+    "category": "Associate",
+    "retiringOn": "February 2, 2026."
   },
   {
     "name": "Salesforce Certified Platform Data Architect",
@@ -37,7 +40,8 @@
     "credentialNo": "3791768",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/dataarchitect",
     "credentialBadge": "/assets/images/certifications/badges/dataarchitect.png",
-    "category": "Architect"
+    "category": "Architect",
+    "retiringOn": ""
   },
   {
     "name": "Salesforce Certified Platform App Builder",
@@ -47,7 +51,8 @@
     "credentialNo": "3817844",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/platformappbuilder",
     "credentialBadge": "/assets/images/certifications/badges/platformappbuilder.png",
-    "category": "Developer"
+    "category": "Developer",
+    "retiringOn": ""
   },
   {
     "name": "Salesforce Certified Platform Administrator",
@@ -57,7 +62,8 @@
     "credentialNo": "2442277",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/administrator",
     "credentialBadge": "/assets/images/certifications/badges/administrator.png",
-    "category": "Administrator"
+    "category": "Administrator",
+    "retiringOn": ""
   },
   {
     "name": "Salesforce Certified Omnistudio Developer",
@@ -67,6 +73,7 @@
     "credentialNo": "52522624",
     "credentialUrl": "https://trailhead.salesforce.com/en/credentials/omnistudiodeveloper",
     "credentialBadge": "/assets/images/certifications/badges/omnistudiodeveloper.png",
-    "category": "Developer"
+    "category": "Developer",
+    "retiringOn": ""
   }
 ]
