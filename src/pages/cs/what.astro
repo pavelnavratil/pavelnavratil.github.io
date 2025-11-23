@@ -1,15 +1,9 @@
 ---
 import certifications from "@collections/cs/certifications.json";
-import Layout from "@layouts/main.astro";
 import WhatBase from "@components/page/what.astro";
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const prefixLocale = true;
 ---
 <!--
 import experiences from '@collections/cs/experiences.json'
 -->
-<Layout language="cs" title={t('what.title')} prefixLocale={prefixLocale}>
-  <WhatBase certifications={certifications}/>
-</Layout>
+<WhatBase certifications={certifications} prefixLocale={prefixLocale}/>

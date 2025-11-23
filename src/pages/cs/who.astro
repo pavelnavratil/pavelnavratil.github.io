@@ -1,12 +1,5 @@
 ---
-import Layout from "@layouts/main.astro";
 import WhoBase from '@components/page/who.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const prefixLocale = true;
 ---
-
-<Layout language="cs" title={t('who.title')} prefixLocale={prefixLocale}>
-  <WhoBase/>
-</Layout>
+<WhoBase prefixLocale={prefixLocale}/>

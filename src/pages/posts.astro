@@ -1,12 +1,5 @@
 ---
-import Layout from "@layouts/main.astro";
 import PostsBase from '@components/page/posts.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const prefixLocale = false;
 ---
-
-<Layout language="en" title={t('writings.title')} prefixLocale={prefixLocale}>
-  <PostsBase/>
-</Layout>
+<PostsBase prefixLocale={prefixLocale}/>

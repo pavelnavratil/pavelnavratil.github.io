@@ -1,13 +1,6 @@
 ---
 import projects from "@collections/en/projects.json";
-import Layout from "@layouts/main.astro";
 import ProjectsBase from '@components/page/projects.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const prefixLocale = false;
 ---
-
-<Layout language="en" title={t('projects.title')} prefixLocale={prefixLocale}>
-  <ProjectsBase projects={projects}/>
-</Layout>
+<ProjectsBase projects={projects} prefixLocale={prefixLocale}/>

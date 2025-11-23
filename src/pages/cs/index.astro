@@ -1,12 +1,6 @@
 ---
 import worked from "@collections/cs/worked.json";
 import projects from "@collections/cs/projects.json";
-import Layout from "@layouts/main.astro";
 import HomeBase from '@components/page/home.astro'
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
-<Layout language={lang} title={t('home.title')}>
-  <HomeBase projectsCol={projects} workedCol={worked}/>
-</Layout>
+<HomeBase projectsCol={projects} workedCol={worked}/>
