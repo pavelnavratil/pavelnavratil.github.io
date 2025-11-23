@@ -1,6 +1,6 @@
 ---
-import Button from "../button.astro";
-import Project from "../project.astro";
+import Button from '@components/common/button.astro'
+import Project from '@components/item-template/project.astro'
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const { projects } = Astro.props;

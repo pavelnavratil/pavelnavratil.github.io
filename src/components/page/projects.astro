@@ -1,8 +1,8 @@
 ---
 const { projects, prefixLocale } = Astro.props
 import Layout from '@layouts/main.astro'
-import PageHeading from '@components/page-heading.astro'
-import Project from '@components/project.astro'
+import PageHeading from '@components/page-template/page-heading.astro'
+import Project from '@components/item-template/project.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

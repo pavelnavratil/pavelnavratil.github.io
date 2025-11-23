@@ -1,14 +1,14 @@
 ---
 const { certifications, prefixLocale } = Astro.props
 import Layout from '@layouts/main.astro'
-import PageHeading from '@components/page-heading.astro'
-import Certificate from '@components/certificate.astro'
+import PageHeading from '@components/page-template/page-heading.astro'
+import Certificate from '@components/item-template/certificate.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 <!--
-import AboutExperience from '@components/about-experience.astro'
+import AboutExperience from '@components/item-template/about-experience.astro'
 -->
 <Layout language={lang} title={t('what.title')} prefixLocale={prefixLocale}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
