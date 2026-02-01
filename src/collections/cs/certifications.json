@@ -1,5 +1,27 @@
 [
   {
+    "name": "Salesforce Certified Application Architect",
+    "description": "Certifikovaní aplikační architekti mají hluboké znalosti nativních funkcí a funkcionality Salesforce. Jsou také experty na modelování hierarchie rolí, dat a vhodných mechanismů sdílení.",
+    "issueDate": "Leden 2026",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "7423166",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/applicationarchitect",
+    "credentialBadge": "/assets/images/certifications/badges/applicationarchitect.png",
+    "category": "Architekt",
+    "retiringOn": ""
+  },
+  {
+    "name": "Salesforce Certified Platform Sharing and Visibility Architect",
+    "description": "Architekti s touto certifikací ovládají plynulý návrh spolehlivých, škálovatelných a vysoce výkonných technických řešení na platformě Salesforce, která splňují požadavky na zabezpečení sdílení dat a viditelnosti dat.",
+    "issueDate": "Leden 2026",
+    "issuingOrg": "Salesforce",
+    "credentialNo": "7423165",
+    "credentialUrl": "https://trailhead.salesforce.com/en/credentials/sharingandvisibilityarchitect",
+    "credentialBadge": "/assets/images/certifications/badges/sharingandvisibilityarchitect.png",
+    "category": "Architekt",
+    "retiringOn": ""
+  },
+  {
     "name": "Salesforce Certified Platform Developer II",
     "description": "Vývojáři s touto certifikací jsou experti na pokročilé programové možnosti platformy Salesforce a také na využití datového modelování k vývoji komplexní obchodní logiky a rozhraní.",
     "issueDate": "Červenec 2025",
