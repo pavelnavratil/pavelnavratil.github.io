@@ -3,8 +3,7 @@ import { getLangFromUrl, useTranslatedPath } from '@i18n/utils';
 const { post } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
-const postSlug = post.id.split('/');
-const postLink = `/post/${postSlug}.md`;
+const postLink = `/post/${post.id}`;
 const link = translatePath(postLink);
 ---
 <div

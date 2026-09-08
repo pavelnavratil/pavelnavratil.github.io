@@ -1,15 +1,13 @@
 ---
-const { certifications, prefixLocale } = Astro.props
+const { certifications, experiences, prefixLocale } = Astro.props
 import Layout from '@layouts/main.astro'
 import PageHeading from '@components/page-template/page-heading.astro'
 import Certificate from '@components/item-template/certificate.astro'
+import AboutExperience from '@components/item-template/about-experience.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
-<!--
-import AboutExperience from '@components/item-template/about-experience.astro'
--->
 <Layout language={lang} title={t('what.title')} prefixLocale={prefixLocale}>
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
@@ -48,8 +46,7 @@ import AboutExperience from '@components/item-template/about-experience.astro'
         })
       }
     </div>
-
-    <!--
+    
     <h2
       class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
     >
@@ -96,6 +93,6 @@ import AboutExperience from '@components/item-template/about-experience.astro'
       >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
         >email</a
       > and I'll be sure to get back to you.
-    </p>-->
+    </p>
   </section>
 </Layout>

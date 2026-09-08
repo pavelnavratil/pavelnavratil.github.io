@@ -1,9 +1,7 @@
 ---
 import certifications from '@collections/en/certifications.json'
+import experiences from '@collections/en/experiences.json'
 import WhatBase from "@components/page/what.astro";
 const prefixLocale = false
 ---
-<!--
-import experiences from '@collections/en/experiences.json'
--->
-<WhatBase certifications={certifications} prefixLocale={prefixLocale}/>
+<WhatBase certifications={certifications} experiences={experiences} prefixLocale={prefixLocale}/>
