@@ -1,28 +1,28 @@
-import { ui, defaultLang, showDefaultLang } from '@i18n/ui';
+import { defaultLang, showDefaultLang, ui } from "@i18n/ui";
 
 export function useTranslatedPath(lang: keyof typeof ui) {
-  return function translatePath(path: string, l: string = lang) {
-    if (path.includes("/post/")){
-      return `/${l}${path}`;
-    }
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`
-  }
+	return function translatePath(path: string, locale: keyof typeof ui = lang) {
+		const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+		return !showDefaultLang && locale === defaultLang
+			? normalizedPath
+			: `/${locale}${normalizedPath}`;
+	};
 }
 
 export function getLangFromUrl(url: URL) {
-  const [first, second] = url.pathname.split('/');
-  if (second in ui) return second as keyof typeof ui;
-  return defaultLang;
+	const [firstSegment] = url.pathname.split("/").filter(Boolean);
+	if (firstSegment in ui) return firstSegment as keyof typeof ui;
+	return defaultLang;
 }
 
 export function getPathWithoutLanguage(url: URL) {
-  const [first, second, third, fourth] = url.pathname.split('/');
-  if (second in ui) return '/'+third + (fourth ? `/${fourth}` : '');
-  return '/'+second + (third ? `/${third}` : '');
+	const segments = url.pathname.split("/").filter(Boolean);
+	if (segments[0] in ui) segments.shift();
+	return segments.length > 0 ? `/${segments.join("/")}` : "/";
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof typeof ui[typeof defaultLang]) {
-    return key in ui[lang] ? (ui[lang] as any)[key] : ui[defaultLang][key];
-  }
+	return function t(key: keyof (typeof ui)[typeof defaultLang]) {
+		return ui[lang][key] ?? ui[defaultLang][key];
+	};
 }

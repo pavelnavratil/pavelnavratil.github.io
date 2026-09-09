@@ -1,6 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-heading: var(--heading-color);
+  --font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
 
 @layer base {
   :root {
@@ -9,6 +24,8 @@
     --card: 0 0% 100%;
     --primary: 148 65% 30%;
     --primary-foreground: 0 0% 100%;
+    --accent: 39 100% 27%;
+    --accent-foreground: 0 0% 100%;
     --muted: 210 11% 93%;
     --muted-foreground: 212 8% 42%;
     --border: 212 11% 83%;
@@ -21,6 +38,8 @@
     --card: 215 28% 11%;
     --primary: 154 56% 48%;
     --primary-foreground: 215 28% 7%;
+    --accent: 42 77% 55%;
+    --accent-foreground: 215 28% 7%;
     --muted: 214 17% 15%;
     --muted-foreground: 213 7% 52%;
     --border: 214 17% 18%;
@@ -28,16 +47,20 @@
   }
 
   * { border-color: hsl(var(--border)); }
-  html { opacity: 0; font-size: 14px; color-scheme: light; }
+  html { opacity: 0; font-size: 16px; color-scheme: light; }
   html[data-theme='light'], html[data-theme='dark'] { opacity: 1; }
   html[data-theme='dark'] { color-scheme: dark; }
   body {
     font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 { color: var(--heading-color); }
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
+  }
 }
 
 .prose { color: hsl(var(--foreground)); }
@@ -57,4 +80,13 @@
   vertical-align: middle;
   transform: translateY(-0.05em);
   animation: terminal-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

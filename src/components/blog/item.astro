@@ -1,12 +1,19 @@
 ---
-import { getLangFromUrl, useTranslatedPath } from '@i18n/utils';
+import type { CollectionEntry } from "astro:content";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+interface Props {
+	post: CollectionEntry<"blog">;
+	showArrow?: boolean;
+}
 const { post, showArrow = true } = Astro.props;
-const tags = Array.isArray(post.data.tags) && post.data.tags.length > 0
-  ? post.data.tags
-  : ['Salesforce'];
+const tags =
+	Array.isArray(post.data.tags) && post.data.tags.length > 0
+		? post.data.tags
+		: ["Salesforce"];
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
-const postLink = `/post/${post.id}`;
+const postSlug = post.id.split("/").slice(1).join("/");
+const postLink = `/post/${postSlug}`;
 const link = translatePath(postLink);
 ---
 
@@ -16,7 +23,7 @@ const link = translatePath(postLink);
   <span class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
     <span class="block w-full rounded-sm aspect-[1350/768] bg-muted" aria-hidden="true"></span>
     <span class="block w-full px-1 mt-5 mb-1 sm:mt-3">
-      <span class="uppercase text-xs mb-2 block text-[#D29922]">{tags.join(', ')}</span>
+      <span class="uppercase text-xs mb-2 block text-accent">{tags.join(', ')}</span>
       <span class="flex items-center mb-0 text-base font-semibold tracking-tight text-foreground">
         <span>{post.data.title}</span>
         {showArrow && <span aria-hidden="true" class="ml-1 transition-transform group-hover:translate-x-0.5">↗</span>}

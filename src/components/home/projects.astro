@@ -1,8 +1,16 @@
 ---
-import Button from '@components/common/button.astro'
-import Project from '@components/item-template/project.astro'
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import Button from "@components/common/button.astro";
+import Project from "@components/item-template/project.astro";
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from "@i18n/utils";
+import type { ProjectEntry } from "../../types/content";
 const lang = getLangFromUrl(Astro.url);
+interface Props {
+	projects: ProjectEntry[];
+}
 const { projects } = Astro.props;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);

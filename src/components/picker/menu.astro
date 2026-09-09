@@ -1,6 +1,11 @@
 ---
 import menus from "@collections/menu.json";
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import { ui } from "@i18n/ui";
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
@@ -9,8 +14,9 @@ const { mobile = false } = Astro.props;
 {
   menus.map((menu) => {
     const link = menu.url;
-    const translationKey = `nav.${menu.key}`;
+    const translationKey = `nav.${menu.key}` as keyof typeof ui.en;
     const href = translatePath(link);
+    const isCurrent = Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(`${href}/`));
     
     return (
     <a
@@ -18,8 +24,9 @@ const { mobile = false } = Astro.props;
       class:list={[
         "transition-colors hover:text-primary",
         mobile ? "w-full py-2 text-base text-left" : "text-sm",
-        Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(`${href}/`)) ? "underline underline-offset-4" : ""
+        isCurrent ? "underline underline-offset-4" : ""
       ]}
+      aria-current={isCurrent ? 'page' : undefined}
     >
       {t(translationKey)}
     </a>

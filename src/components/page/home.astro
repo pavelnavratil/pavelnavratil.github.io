@@ -1,17 +1,26 @@
 ---
-const { projectsCol, workedCol } = Astro.props
-import Layout from '@layouts/main.astro'
-import Button from '@components/common/button.astro'
-import Projects from '@components/home/projects.astro'
-import Worked from '@components/home/worked.astro'
-import Separator from '@components/home/separator.astro'
-import Writings from '@components/home/writings.astro'
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils'
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
-const translatePath = useTranslatedPath(lang)
+import type { ProjectEntry, WorkEntry } from "../../types/content";
+interface Props {
+	projectsCol: ProjectEntry[];
+	workedCol: WorkEntry[];
+}
+const { projectsCol, workedCol } = Astro.props;
+import Button from "@components/common/button.astro";
+import Projects from "@components/home/projects.astro";
+import Separator from "@components/home/separator.astro";
+import Worked from "@components/home/worked.astro";
+import Writings from "@components/home/writings.astro";
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from "@i18n/utils";
+import Layout from "@layouts/main.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
-<Layout language={lang} title={t('home.title')}>
+<Layout language={lang} title={t('home.title')} description={`${t('home.am')} ${t('home.dev')}`}>
   <section class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0">
     <div class="flex flex-col items-center md:flex-row">
       <div class="relative w-full">

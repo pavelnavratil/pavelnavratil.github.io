@@ -1,13 +1,17 @@
 ---
-const { projects, prefixLocale } = Astro.props
-import Layout from '@layouts/main.astro'
-import PageHeading from '@components/page-template/page-heading.astro'
-import Project from '@components/item-template/project.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils'
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+import type { ProjectEntry } from "../../types/content";
+interface Props {
+	projects: ProjectEntry[];
+}
+const { projects } = Astro.props;
+import Project from "@components/item-template/project.astro";
+import PageHeading from "@components/page-template/page-heading.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "@layouts/main.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
-<Layout language={lang} title={t('projects.title')} prefixLocale={prefixLocale}>
+<Layout language={lang} title={t('projects.title')} description={t('projects.desc')}>
   <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('projects.title')}

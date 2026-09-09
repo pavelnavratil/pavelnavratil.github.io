@@ -1,15 +1,23 @@
 ---
-import Layout from '@layouts/main.astro'
-import { getLangFromUrl } from '@i18n/utils'
+import { getLangFromUrl } from "@i18n/utils";
+import Layout from "@layouts/main.astro";
 const { frontmatter } = Astro.props;
-const tags = Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0
-  ? frontmatter.tags
-  : ['Salesforce'];
+const tags =
+	Array.isArray(frontmatter.tags) && frontmatter.tags.length > 0
+		? frontmatter.tags
+		: ["Salesforce"];
 const lang = getLangFromUrl(Astro.url);
+const publishedTime = frontmatter.pubDate.toISOString();
 ---
 
-<Layout language={lang} title={frontmatter.title}>
-  <main
+<Layout
+  language={lang}
+  title={frontmatter.title}
+  description={frontmatter.description}
+  type="article"
+  publishedTime={publishedTime}
+>
+  <div
     class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-background text-foreground"
   >
     <div
@@ -23,9 +31,12 @@ const lang = getLangFromUrl(Astro.url);
         class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-background"
       >
       </div>
-      <p class="w-full max-w-2xl mx-auto mb-3 text-xs uppercase tracking-widest text-[#D29922]">
+      <p class="w-full max-w-2xl mx-auto mb-3 text-xs uppercase tracking-widest text-accent">
         {tags.join(', ')}
       </p>
+      <time datetime={publishedTime} class="w-full max-w-2xl mx-auto mb-3 text-xs text-muted-foreground">
+        {frontmatter.dateFormatted}
+      </time>
       <h1
         class="w-full max-w-2xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left text-heading mb-8 md:mb-12 md:text-4xl lg:text-5xl md:leading-none"
       >
@@ -38,5 +49,5 @@ const lang = getLangFromUrl(Astro.url);
     >
       <slot />
     </article>
-  </main>
+  </div>
 </Layout>

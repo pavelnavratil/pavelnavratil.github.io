@@ -5,7 +5,7 @@ tags:
   - Salesforce
   - Development
   - Apex
-dateFormatted: August 1th, 2024
+dateFormatted: August 1, 2024
 pubDate: 2024-08-01T00:00:00.000Z
 ---
 Hi there!

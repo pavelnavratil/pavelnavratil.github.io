@@ -1,9 +1,31 @@
 ---
-const { name, description, url, image, category, issueDate, retiringOn, isAboveFold = false } = Astro.props;
-import { Image } from 'astro:assets';
-import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { getImage } from "@utils/images";
+import type { CertificationEntry } from "../../types/content";
+interface Props {
+	name: CertificationEntry["name"];
+	description: CertificationEntry["description"];
+	url: CertificationEntry["credentialUrl"];
+	image: CertificationEntry["credentialBadge"];
+	category: CertificationEntry["category"];
+	issueDate: CertificationEntry["issueDate"];
+	retiringOn?: CertificationEntry["retiringOn"];
+	isAboveFold?: boolean;
+}
+const {
+	name,
+	description,
+	url,
+	image,
+	category,
+	issueDate,
+	retiringOn,
+	isAboveFold = false,
+} = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const imageMetadata = getImage(image);
 ---
 
 <a href={url} target="_blank" rel="noreferrer" data-certification-card data-category={category} class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group rounded-lg">
@@ -12,18 +34,19 @@ const t = useTranslations(lang);
   <span class="relative z-30 flex flex-row gap-4 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
     <span class="flex-shrink-0 mt-1">
       <Image
-        src={image}
+        src={imageMetadata}
         alt=""
         class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-md"
         decoding="async"
         loading={isAboveFold ? 'eager' : 'lazy'}
         fetchpriority={isAboveFold ? 'high' : 'auto'}
-        width={500}
-        height={490}
+        widths={[56, 64, 112, 128]}
+        sizes="(min-width: 640px) 64px, 56px"
+        format="webp"
       />
     </span>
     <span class="flex flex-col flex-1 min-w-0">
-      <span class="inline-block mb-1 text-[10px] uppercase tracking-widest font-semibold text-[#D29922]">{category}</span>
+      <span class="inline-block mb-1 text-xs uppercase tracking-widest font-semibold text-accent">{category}</span>
       <span class="flex items-center mb-0.5 text-base font-semibold tracking-tight text-foreground">
         <span>{name}</span><span aria-hidden="true" class="ml-1 transition-transform group-hover:translate-x-0.5">↗</span>
       </span>

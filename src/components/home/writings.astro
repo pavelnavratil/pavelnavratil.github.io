@@ -1,7 +1,11 @@
 ---
-import Button from '@components/common/button.astro'
-import PostsLoop from '@components/blog/slice-loop.astro';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils';
+import PostsLoop from "@components/blog/slice-loop.astro";
+import Button from "@components/common/button.astro";
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
@@ -18,7 +22,7 @@ const translatePath = useTranslatedPath(lang);
   </p>
 
   <div class="grid items-stretch w-full sm:grid-cols-2 gap-7 mt-7">
-    <PostsLoop count="2" />
+    <PostsLoop count={2} />
   </div>
   <div class="flex items-center justify-center w-full py-5">
     <Button text={t('nav.thoughts')} link={translatePath('/posts/')} />

@@ -1,3 +1,8 @@
-<button id="themeToggle" type="button" aria-label="Toggle theme" class="text-xs px-3 py-1.5 rounded-sm border transition-colors duration-200 bg-muted border-border text-muted-foreground hover:text-primary hover:border-primary font-mono">
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<button id="themeToggle" type="button" aria-label={t('theme.toggle')} class="text-xs px-3 py-1.5 rounded-sm border transition-colors duration-200 bg-muted border-border text-muted-foreground hover:text-primary hover:border-primary font-mono">
   <span id="themeLabel">$ theme --dark</span>
 </button>

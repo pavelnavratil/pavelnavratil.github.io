@@ -1,14 +1,21 @@
 ---
-import { languages } from '@i18n/ui';
-import { getLangFromUrl, getPathWithoutLanguage, useTranslatedPath } from '@i18n/utils';
+import { languages } from "@i18n/ui";
+import {
+	getLangFromUrl,
+	getPathWithoutLanguage,
+	useTranslatedPath,
+} from "@i18n/utils";
 
 const pageLang = getLangFromUrl(Astro.url);
 const pagePath = getPathWithoutLanguage(Astro.url);
 const translatePath = useTranslatedPath(pageLang);
+const alternateLanguages = (
+	Object.keys(languages) as (keyof typeof languages)[]
+).filter((locale) => locale !== pageLang);
 ---
 
-{Object.entries(languages).filter(([lang]) => lang !== pageLang).map(([lang]) => (
-  <a href={translatePath(pagePath, lang)} lang={lang} aria-label={`Switch to ${lang}`} class="text-xs px-3 py-1.5 rounded-sm border transition-colors duration-200 bg-muted border-border text-muted-foreground hover:text-primary hover:border-primary font-mono">
-    $ lang --{lang}
+{alternateLanguages.map((locale) => (
+  <a href={translatePath(pagePath, locale)} lang={locale} hreflang={locale} aria-label={`Switch to ${languages[locale]}`} class="text-xs px-3 py-1.5 rounded-sm border transition-colors duration-200 bg-muted border-border text-muted-foreground hover:text-primary hover:border-primary font-mono">
+    $ lang --{locale}
   </a>
 ))}

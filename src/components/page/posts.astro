@@ -1,13 +1,12 @@
 ---
-const { prefixLocale } = Astro.props
-import Layout from '@layouts/main.astro'
-import PageHeading from '@components/page-template/page-heading.astro'
-import PostsLoop from '@components/blog/loop.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils'
-const lang = getLangFromUrl(Astro.url)
-const t = useTranslations(lang)
+import PostsLoop from "@components/blog/loop.astro";
+import PageHeading from "@components/page-template/page-heading.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "@layouts/main.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
-<Layout language={lang} title={t('writings.title')} prefixLocale={prefixLocale}>
+<Layout language={lang} title={t('writings.title')} description={t('writings.desc')}>
   <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('writings.title')}

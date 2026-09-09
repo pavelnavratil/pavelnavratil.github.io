@@ -1,119 +1,133 @@
-import { authorName } from '@utils/const';
-
-type Locale = "en" | "cs" | string;
-
-type Translation = {
-  [locale in Locale]: {
-    [key: string]: string;
-  };
-};
-
-type Languages = {
-  [locale in Locale]: string;
-};
-
-export type { Locale, Translation, Languages };
+import { authorName } from "@utils/const";
 
 export const showDefaultLang = false;
 
-export const languages: Languages = {
-  en: "EN",
-  cs: "CZ",
-};
+export const languages = {
+	en: "EN",
+	cs: "CZ",
+} as const;
 
 export const defaultLang = "en";
 
-export const ui: Translation = {
-  en: {
-    "nav.home": "Home",
-    "nav.what": "What I Do",
-    "nav.who": "Who I Am",
-    "nav.worked": "My Work",
-    "nav.projects": "My Projects",
-    "nav.posts": "Blog",
-    "nav.thoughts": "View All My Thoughts",
-    "nav.allWork": "View All Work I Was Participated In",
-    "nav.allProjects": "View All My Projects",
-    "home.title": authorName,
-    "home.hello": "Hi, I'm Pavel.",
-    "home.am": "I'm an accomplished explorer, ",
-    "home.dev": "a full stack web developer with a passion for Salesforce, Astro and Payload CMS.",
-    "home.layered": "Layered by outdoor, travel, adventure, and bike.",
-    "home.help": "I can help you out with:",
-    "home.sfDev": "Salesforce Development",
-    "home.sfArch": "Salesforce Architecture",
-    "home.webDev": "Website Development",
-    "home.more": "and more...",
-    "projects.title": "My Personal Projects",
-    "projects.desc": "Here are some of my current personal projects I'm working on.",
-    "projects.separator": "Check out my personal projects",
-    "worked.title": " My Work",
-    "worked.desc": "Here are some projects I have worked on over the years.",
-    "worked.separator": "Check out my work projects",
-    "writings.title": " My Thoughts",
-    "writings.prelude": "About life, coding and stargazing.",
-    "writings.desc": "Along with coding I also like to write about life. Here are some of my recent posts.",
-    "writings.separator": " Some of my thoughts",
-    "posts.filterByTag": "Filter posts by tag",
-    "posts.allTags": "All",
-    "posts.emptyTag": "No posts match this tag.",
-    "what.title": " What I Do",
-    "what.desc": "I'm a full stack web developer with a passion for Salesforce, Astro and Payload CMS.",
-    "bio.title": " Short bio",
-    "bio.desc": "Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging Mentor. Relentless.",
-    "certifications.title": " Certifications",
-    "certifications.retiring": " Retiring in:",
-    "certifications.filterByCategory": "Filter certifications by category",
-    "certifications.all": "All",
-    "who.title": " Who I Am",
-    "who.desc": "I'm an accomplished explorer.",
-    "about.title": " About",
-    "about.desc": "Offline, I am usually cycling and garnering.",
-  },
-  cs: {
-    "nav.home": "Domů",
-    "nav.what": "Co dělám",
-    "nav.who": "Kdo jsem",
-    "nav.worked": "Moje práce",
-    "nav.projects": "Moje projekty",
-    "nav.posts": "Blog",
-    "nav.thoughts": "Všechny mé myšlenky",
-    "nav.allWork": "Zobraz všechny práce, kterých jsem se zúčastnil",
-    "nav.allProjects": "Zobraz všechny mé projekty",
-    "home.title": authorName,
-    "home.hello": "Dobrý den, jmenuji se Pavel.",
-    "home.am": "Jsem zkušený dobrodruh,",
-    "home.dev": "a plnohodnotný webový vývojář se zájmem o Salesforce, Astro a Payload CMS.",
-    "home.layered": "Formovaný přírodou, cestováním, dobrodružstvím a kolem.",
-    "home.help": "Můžu vám pomoci s:",
-    "home.sfDev": "Salesforce vývojem",
-    "home.sfArch": "Salesforce architektůrou",
-    "home.webDev": "Vývojem webových stránek",
-    "home.more": "a více...",
-    "projects.title": "Moje osobních projekty",
-    "projects.desc": "Zde jsou některé z mých osobních projektů, na kterých teď pracuji.",
-    "projects.separator": "Podívejte se na moje osobní projekty",
-    "worked.title": " Moje práce",
-    "worked.desc": "Zde jsou některé projekty, na kterých jsem pracoval v průběhu let.",
-    "worked.separator": "Podívejte se na moje pracovní projekty",
-    "writings.title": " Moje myšlenky",
-    "writings.prelude": "O životě, kódování a pozorování hvězd.",
-    "writings.desc": "Kromě kódování také rád píšu o životě. Zde jsou některé z mých nedávných příspěvků.",
-    "writings.separator": " Některé z mých myšlenek",
-    "posts.filterByTag": "Filtrovat příspěvky podle štítku",
-    "posts.allTags": "Vše",
-    "posts.emptyTag": "Tomuto štítku neodpovídají žádné příspěvky.",
-    "what.title": " Co dělám",
-    "what.desc": "Jsem full-stack webový vývojář s vášní pro Salesforce, Astro a Payload CMS.",
-    "bio.title": " Krátce o mně",
-    "bio.desc": "Analytický myslitel. Kreativní řešitel problémů. Zapálený student. Ohleduplný posluchač. Poutavý mentor. Neúnavný.",
-    "certifications.title": " Certifikace",
-    "certifications.retiring": " Zastaralá od:",
-    "certifications.filterByCategory": "Filtrovat certifikace podle kategorie",
-    "certifications.all": "Vše",
-    "who.title": " Kdo jsem",
-    "who.desc": "Jsem zkušený dobrodruh.",
-    "about.title": " O mně",
-    "about.desc": "Offline, obvykle jezdím na kole a zahradničím.",
-  },
-} as const;
+export const ui = {
+	en: {
+		"nav.home": "Home",
+		"nav.what": "What I Do",
+		"nav.who": "Who I Am",
+		"nav.worked": "My Work",
+		"nav.projects": "My Projects",
+		"nav.posts": "Blog",
+		"nav.thoughts": "View All My Thoughts",
+		"nav.allWork": "View All Work I Contributed To",
+		"nav.allProjects": "View All My Projects",
+		"home.title": authorName,
+		"home.hello": "Hi, I'm Pavel.",
+		"home.am": "I'm an experienced explorer and",
+		"home.dev":
+			"a full-stack web developer with a passion for Salesforce, Astro, and Payload CMS.",
+		"home.layered":
+			"Outside work, you will usually find me cycling, travelling, or exploring the outdoors.",
+		"home.help": "I can help you out with:",
+		"home.sfDev": "Salesforce Development",
+		"home.sfArch": "Salesforce Architecture",
+		"home.webDev": "Website Development",
+		"home.more": "and more...",
+		"projects.title": "My Personal Projects",
+		"projects.desc":
+			"Here are some of my current personal projects I'm working on.",
+		"projects.separator": "Check out my personal projects",
+		"worked.title": " My Work",
+		"worked.desc": "Here are some projects I have worked on over the years.",
+		"worked.separator": "Check out my work projects",
+		"writings.title": " My Thoughts",
+		"writings.prelude": "About life, coding and stargazing.",
+		"writings.desc":
+			"Along with coding I also like to write about life. Here are some of my recent posts.",
+		"writings.separator": " Some of my thoughts",
+		"posts.filterByTag": "Filter posts by tag",
+		"posts.allTags": "All",
+		"posts.emptyTag": "No posts match this tag.",
+		"what.title": " What I Do",
+		"what.desc":
+			"I'm a full stack web developer with a passion for Salesforce, Astro and Payload CMS.",
+		"bio.title": " Short bio",
+		"bio.desc":
+			"Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging Mentor. Relentless.",
+		"certifications.title": " Certifications",
+		"certifications.retiring": " Retiring in:",
+		"certifications.filterByCategory": "Filter certifications by category",
+		"certifications.all": "All",
+		"experience.title": "Experience",
+		"connect.title": "Let's Connect",
+		"connect.prompt":
+			"If you would like to discuss a project or learn more about my work,",
+		"connect.email": "send me an email",
+		"menu.open": "Open menu",
+		"menu.close": "Close menu",
+		"theme.toggle": "Toggle colour theme",
+		"who.title": " Who I Am",
+		"who.desc": "I'm an accomplished explorer.",
+		"about.title": " About",
+		"about.desc": "Offline, I am usually cycling, travelling, or gardening.",
+	},
+	cs: {
+		"nav.home": "Domů",
+		"nav.what": "Co dělám",
+		"nav.who": "Kdo jsem",
+		"nav.worked": "Moje práce",
+		"nav.projects": "Moje projekty",
+		"nav.posts": "Blog",
+		"nav.thoughts": "Všechny mé myšlenky",
+		"nav.allWork": "Zobraz všechny práce, kterých jsem se zúčastnil",
+		"nav.allProjects": "Zobraz všechny mé projekty",
+		"home.title": authorName,
+		"home.hello": "Dobrý den, jmenuji se Pavel.",
+		"home.am": "Jsem zkušený dobrodruh,",
+		"home.dev":
+			"a plnohodnotný webový vývojář se zájmem o Salesforce, Astro a Payload CMS.",
+		"home.layered": "Formovaný přírodou, cestováním, dobrodružstvím a kolem.",
+		"home.help": "Můžu vám pomoci s:",
+		"home.sfDev": "Salesforce vývojem",
+		"home.sfArch": "Salesforce architekturou",
+		"home.webDev": "Vývojem webových stránek",
+		"home.more": "a více...",
+		"projects.title": "Moje osobní projekty",
+		"projects.desc":
+			"Zde jsou některé z mých osobních projektů, na kterých teď pracuji.",
+		"projects.separator": "Podívejte se na moje osobní projekty",
+		"worked.title": " Moje práce",
+		"worked.desc":
+			"Zde jsou některé projekty, na kterých jsem pracoval v průběhu let.",
+		"worked.separator": "Podívejte se na moje pracovní projekty",
+		"writings.title": " Moje myšlenky",
+		"writings.prelude": "O životě, kódování a pozorování hvězd.",
+		"writings.desc":
+			"Kromě kódování také rád píšu o životě. Zde jsou některé z mých nedávných příspěvků.",
+		"writings.separator": " Některé z mých myšlenek",
+		"posts.filterByTag": "Filtrovat příspěvky podle štítku",
+		"posts.allTags": "Vše",
+		"posts.emptyTag": "Tomuto štítku neodpovídají žádné příspěvky.",
+		"what.title": " Co dělám",
+		"what.desc":
+			"Jsem full-stack webový vývojář s vášní pro Salesforce, Astro a Payload CMS.",
+		"bio.title": " Krátce o mně",
+		"bio.desc":
+			"Analytický myslitel. Kreativní řešitel problémů. Zapálený student. Ohleduplný posluchač. Poutavý mentor. Neúnavný.",
+		"certifications.title": " Certifikace",
+		"certifications.retiring": " Zastaralá od:",
+		"certifications.filterByCategory": "Filtrovat certifikace podle kategorie",
+		"certifications.all": "Vše",
+		"experience.title": "Pracovní zkušenosti",
+		"connect.title": "Spojme se",
+		"connect.prompt":
+			"Pokud chcete probrat projekt nebo se dozvědět více o mé práci,",
+		"connect.email": "napište mi e-mail",
+		"menu.open": "Otevřít nabídku",
+		"menu.close": "Zavřít nabídku",
+		"theme.toggle": "Přepnout barevný motiv",
+		"who.title": " Kdo jsem",
+		"who.desc": "Jsem zkušený dobrodruh.",
+		"about.title": " O mně",
+		"about.desc": "Offline, obvykle jezdím na kole a zahradničím.",
+	},
+} as const satisfies Record<keyof typeof languages, Record<string, string>>;

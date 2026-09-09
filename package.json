@@ -8,20 +8,19 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"check": "biome check --apply-unsafe ."
-	},
-	"dependencies": {
-		"@astrojs/check": "^0.9.10",
-		"typescript": "^5.9.3"
+		"check": "astro check && biome check .",
+		"fix": "biome check --apply ."
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.4",
-		"@astrojs/tailwind": "^6.0.2",
+		"@astrojs/check": "^0.9.10",
+		"@astrojs/sitemap": "^3.7.4",
 		"@biomejs/biome": "1.7.3",
-		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/typography": "^0.5.20",
+		"@tailwindcss/vite": "^4.3.3",
 		"astro": "^7.3.1",
-		"tailwindcss": "^3.4.19",
-		"typescript": "^5.4.5"
+		"sharp": "^0.35.4",
+		"tailwindcss": "^4.3.3",
+		"typescript": "^5.9.3"
 	},
 	"repository": "https://github.com/pavelnavratil/pavelnavratil.github.io.git",
 	"author": "Pavel Navratil <navratil@inp.cz>",

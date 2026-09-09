@@ -1,13 +1,17 @@
 ---
-const { worked, prefixLocale } = Astro.props;
-import Layout from '@layouts/main.astro'
-import PageHeading from '@components/page-template/page-heading.astro'
-import Work from '@components/item-template/work.astro'
-import { getLangFromUrl, useTranslations } from '@i18n/utils'
+import type { WorkEntry } from "../../types/content";
+interface Props {
+	worked: WorkEntry[];
+}
+const { worked } = Astro.props;
+import Work from "@components/item-template/work.astro";
+import PageHeading from "@components/page-template/page-heading.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "@layouts/main.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<Layout language={lang} title={t('worked.title')} prefixLocale={prefixLocale}>
+<Layout language={lang} title={t('worked.title')} description={t('worked.desc')}>
   <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('worked.title')}

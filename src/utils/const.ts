@@ -1,2 +1,2 @@
-export const authorName = "Navrátil Pavel";
+export const authorName = "Pavel Navrátil";
 export const copyright = authorName;
