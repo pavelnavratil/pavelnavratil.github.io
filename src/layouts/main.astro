@@ -111,7 +111,7 @@ const structuredData =
       document.documentElement.classList.toggle('dark', theme === 'dark')
     </script>
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
