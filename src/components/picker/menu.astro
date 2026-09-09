@@ -22,7 +22,7 @@ const { mobile = false } = Astro.props;
     <a
       href={href}
       class:list={[
-        "transition-colors hover:text-primary",
+        "text-primary transition-colors hover:underline",
         mobile ? "w-full py-2 text-base text-left" : "text-sm",
         isCurrent ? "underline underline-offset-4" : ""
       ]}
