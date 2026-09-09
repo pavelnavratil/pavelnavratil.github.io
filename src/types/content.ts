@@ -28,5 +28,4 @@ export interface ExperienceEntry {
 	role: string;
 	company: string;
 	description: string;
-	logo?: string;
 }

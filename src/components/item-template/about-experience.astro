@@ -1,6 +1,6 @@
 ---
 import type { ExperienceEntry } from "../../types/content";
-interface Props extends Omit<ExperienceEntry, "logo"> {
+interface Props extends ExperienceEntry {
 	isLatest?: boolean;
 }
 const { dates, role, company, description, isLatest = false } = Astro.props;

@@ -3,35 +3,30 @@
 		"dates": "December 2023 - Present",
 		"role": "Senior Salesforce Developer",
 		"company": "Česká spořitelna",
-		"description": "Responsible for customer service and CRM system front-end development.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"description": "Responsible for customer service and CRM system front-end development."
 	},
 	{
 		"dates": "November 2022 - November 2023",
 		"role": "Senior Salesforce Developer",
 		"company": "GEN",
-		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems.",
-		"logo": "/assets/images/experiences/yoho.ico"
+		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems."
 	},
 	{
 		"dates": "September 2020 - October 2022",
 		"role": "Senior Salesforce Developer",
 		"company": "Avast",
-		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems.",
-		"logo": "/assets/images/experiences/wulian.ico"
+		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems."
 	},
 	{
 		"dates": "April 2017 - August 2020",
 		"role": "Salesforce Developer & Consultant",
 		"company": "AspectWorks, s.r.o.",
-		"description": "Gathered client requirements, improved business processes, and designed Salesforce solutions and integrations. Delivered configuration, Apex, Lightning, LWC, Visualforce, and data-migration work while supporting adoption and change management.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"description": "Gathered client requirements, improved business processes, and designed Salesforce solutions and integrations. Delivered configuration, Apex, Lightning, LWC, Visualforce, and data-migration work while supporting adoption and change management."
 	},
 	{
 		"dates": "October 2013 - March 2017",
 		"role": "Salesforce Developer & Administrator",
 		"company": "Kenneth Copeland Ministries",
-		"description": "Administered and developed in-house Salesforce applications across Sales Cloud, Service Cloud, and Pardot. Also maintained Windows, macOS, and Linux systems, supported staff, developed WordPress and WooCommerce extensions, and coordinated technology vendors.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"description": "Administered and developed in-house Salesforce applications across Sales Cloud, Service Cloud, and Pardot. Also maintained Windows, macOS, and Linux systems, supported staff, developed WordPress and WooCommerce extensions, and coordinated technology vendors."
 	}
 ]
