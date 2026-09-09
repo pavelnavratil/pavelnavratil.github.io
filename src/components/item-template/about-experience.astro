@@ -1,23 +1,16 @@
 ---
-const { logo, dates, role, company, description } = Astro.props;
-import { Image } from 'astro:assets';
+const { dates, role, company, description, isLatest = false } = Astro.props;
 ---
 
-<div class="relative flex flex-col justify-start pl-12">
-  <div
-    class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700"
-  >
-    <Image src={logo} alt={company} class="w-8 h-8 aspect-[1350/768]" width={1350} height={768}  />
-  </div>
-
-  <p
-    class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"
-  >
-    {dates}
-  </p>
-  <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{role}</h3>
-  <p class="mb-1 text-sm font-medium dark:text-neutral-300">{company}</p>
-  <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
-    {description}
-  </p>
+<div class="relative pl-8 pb-10 last:pb-0">
+  <div class:list={[
+    'absolute -left-[5px] top-[5px] w-[10px] h-[10px] rounded-full border-2 bg-background transition-all',
+    isLatest
+      ? 'border-[#D29922] shadow-[0_0_0_3px_rgba(210,153,34,0.15),0_0_10px_rgba(210,153,34,0.45)]'
+      : 'border-muted-foreground/40',
+  ]}></div>
+  <p class="text-xs uppercase text-muted-foreground tracking-widest mb-1">{dates}</p>
+  <h3 class:list={['text-base font-bold leading-snug', isLatest ? 'text-[#D29922]' : 'text-foreground']}>{role}</h3>
+  <p class="text-sm font-medium text-foreground/70 mt-1 mb-2">{company}</p>
+  <p class="text-sm font-light text-muted-foreground leading-relaxed">{description}</p>
 </div>

@@ -1,23 +1,37 @@
 [
 	{
-		"dates": "June 2018 · Present",
-		"role": "Front-end Engineer",
-		"company": "Full Truck Alliance",
+		"dates": "December 2023 - Present",
+		"role": "Senior Salesforce Developer",
+		"company": "Česká spořitelna",
 		"description": "Responsible for customer service and CRM system front-end development.",
 		"logo": "/assets/images/experiences/fta.ico"
 	},
 	{
-		"dates": "July 2015 · June 2018",
-		"role": "Front-end Engineer",
-		"company": "YOHO!",
-		"description": "Responsible for mobile front-end development of e-commerce platform.",
+		"dates": "November 2022 - November 2023",
+		"role": "Senior Salesforce Developer",
+		"company": "GEN",
+		"description": "Undertakes independent programming and system designing. Undertakessystem analysis and task definition. Is a technical focal point and mentorfor junior colleagues. Supervise and review the work of junior colleagues.Cooperates within a team of developers. Supports the products through bugfixing. Supports the company processes. Cooperates with the team leader onthe team responsibilities.",
 		"logo": "/assets/images/experiences/yoho.ico"
 	},
 	{
-		"dates": "September 2014 · July 2015 ",
-		"role": "Node.JS Developer",
-		"company": "WuLian",
-		"description": "Intern, involved in the development of Internet of Things cloud systems.",
+		"dates": "September 2020 - October 2022",
+		"role": "Senior Salesforce Developer",
+		"company": "Avast",
+		"description": "Undertakes independent programming and system designing. Undertakessystem analysis and task definition. Is a technical focal point and mentorfor junior colleagues. Supervise and review the work of junior colleagues.Cooperates within a team of developers. Supports the products through bugfixing. Supports the company processes. Cooperates with the team leader onthe team responsibilities.",
 		"logo": "/assets/images/experiences/wulian.ico"
-	}
+	},
+  {
+    "dates": "April 2017 - August 2020",
+    "role": "Salesforce Developer & Consultant",
+    "company": "AspectWorks, s.r.o.",
+    "description": "Meet with clients to determine business and functional requirements. Assistin re-engineering business and system processes. Analyze client businessrequirements (i.e. business processes, existing technical infrastructureoutside Salesforce, integration, and middleware). Identify opportunities, andprescribe solutions, to improve business processes. Perform configurationand customization of the Salesforce.com platform. Facilitate effective changemanagement programs within the client organization including creating andadministering communication plans to promote end-user adoption. Act asa user advocate to ensure overall system usability and adoption. Serveas a primary point of contact, as assigned. Build software solutions in theSalesforce environment. Provide solutions on time and within a budget ofproject objectives and requirements. Hands-on design and development ofcustom solutions on the force.com platform including work in Apex, Lightning,LWC, Visualforce, and data migration.",
+    "logo": "/assets/images/experiences/fta.ico"
+  },
+  {
+    "dates": "October 2013 - March 2017",
+    "role": "Salesforce Developer & Administrator",
+    "company": "Kenneth Copeland Ministries",
+    "description": "Salesforce Administrator & Developer of inhouse applications integrated withSales Cloud, Service Cloud, and Pardot. Windows, macOS, and Linux servermaintenance along with support for staff which is interspersed with dutiessuch as WordPress & WooCommerce themes and plugins development. TheIT Specialist is also responsible to work with outside vendors and agenciessupplying hardware and software solutions.",
+    "logo": "/assets/images/experiences/fta.ico"
+  }
 ]

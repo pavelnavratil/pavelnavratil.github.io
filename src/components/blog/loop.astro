@@ -1,13 +1,91 @@
 ---
 import { getCollection } from 'astro:content';
-import { getLangFromUrl } from '@i18n/utils';
+import { getLangFromUrl, useTranslations } from '@i18n/utils';
 import Item from '@components/blog/item.astro';
+
 const pageLang = getLangFromUrl(Astro.url);
-const allCzechPosts = await getCollection("czech-posts");
-const allEnglishPosts = await getCollection("english-posts");
+const t = useTranslations(pageLang);
+const allCzechPosts = await getCollection('czech-posts');
+const allEnglishPosts = await getCollection('english-posts');
 const allPosts = pageLang === 'en' ? allEnglishPosts : allCzechPosts;
-const posts = (await allPosts).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const collator = new Intl.Collator(pageLang === 'cs' ? 'cs' : 'en');
+const getPostTags = (post: (typeof posts)[number]) =>
+  Array.isArray(post.data.tags) && post.data.tags.length > 0
+    ? post.data.tags
+    : ['Salesforce'];
+const tags = [...new Set(posts.flatMap(getPostTags))].sort((a, b) => {
+  if (a === 'Salesforce') return -1;
+  if (b === 'Salesforce') return 1;
+  return collator.compare(a, b);
+});
 ---
-{posts.map(post => (
-  <Item post={post} />
-  ))}
+
+<div data-post-filters>
+  <p class="mt-6 mb-2 text-sm font-semibold text-foreground">{t('posts.filterByTag')}</p>
+  <div class="flex flex-wrap gap-2" role="group" aria-label={t('posts.filterByTag')}>
+    <button class="tag-filter" type="button" data-tag="*" aria-pressed="true">{t('posts.allTags')}</button>
+    {tags.map((tag) => (
+      <button class="tag-filter" type="button" data-tag={tag} aria-pressed="false">{tag}</button>
+    ))}
+  </div>
+
+  <div class="z-50 grid items-stretch w-full grid-cols-1 gap-7 my-8 sm:grid-cols-2">
+    {posts.map((post) => (
+      <div data-post-card data-tags={JSON.stringify(getPostTags(post))}>
+        <Item post={post} />
+      </div>
+    ))}
+  </div>
+
+  <p class="hidden my-8 text-sm text-muted-foreground" data-empty-state aria-live="polite">
+    {t('posts.emptyTag')}
+  </p>
+</div>
+
+<style>
+  .tag-filter {
+    border: 1px solid #d29922;
+    border-radius: 0.125rem;
+    padding: 0.5rem 1.25rem;
+    background: transparent;
+    color: #d29922;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  .tag-filter:hover,
+  .tag-filter[aria-pressed='true'] {
+    background: #d29922;
+    color: white;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-post-filters]').forEach((filter) => {
+    const buttons = [...filter.querySelectorAll('[data-tag]')];
+    const cards = [...filter.querySelectorAll('[data-post-card]')];
+    const emptyState = filter.querySelector('[data-empty-state]');
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedTag = button.getAttribute('data-tag');
+        let visibleCount = 0;
+
+        buttons.forEach((candidate) => {
+          candidate.setAttribute('aria-pressed', String(candidate === button));
+        });
+
+        cards.forEach((card) => {
+          const tags = JSON.parse(card.getAttribute('data-tags') || '[]');
+          const isVisible = selectedTag === '*' || tags.includes(selectedTag);
+          card.classList.toggle('hidden', !isVisible);
+          if (isVisible) visibleCount += 1;
+        });
+
+        emptyState?.classList.toggle('hidden', visibleCount > 0);
+      });
+    });
+  });
+</script>

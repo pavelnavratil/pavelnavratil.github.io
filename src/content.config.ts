@@ -5,6 +5,7 @@ import { z } from 'astro/zod';
 const blogSchema = z.object({
   title: z.string(),
   description: z.string(),
+  tags: z.array(z.string()).min(1).default(['Salesforce']),
   dateFormatted: z.string(),
   pubDate: z.date(),
 });

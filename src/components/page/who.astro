@@ -7,15 +7,15 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 <Layout language={lang} title={t('who.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('who.title')}
       description={t('who.desc')}
     />
 
-    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">{t('about.title')}</h2>
+    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 text-heading">{t('about.title')}</h2>
     <p
-      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="text-sm leading-6 text-muted-foreground sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
       {t('about.desc')}
     </p>

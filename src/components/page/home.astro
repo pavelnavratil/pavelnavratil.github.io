@@ -1,6 +1,5 @@
 ---
 const { projectsCol, workedCol } = Astro.props
-import { Picture } from 'astro:assets';
 import Layout from '@layouts/main.astro'
 import Button from '@components/common/button.astro'
 import Projects from '@components/home/projects.astro'
@@ -13,55 +12,35 @@ const t = useTranslations(lang)
 const translatePath = useTranslatedPath(lang)
 ---
 <Layout language={lang} title={t('home.title')}>
-  <div
-    class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0"
-  >
+  <section class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 md:mt-24 lg:mt-32 xl:px-0">
     <div class="flex flex-col items-center md:flex-row">
-      <div class="relative w-full md:w-1/2">
+      <div class="relative w-full">
         <h1
-          class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl dark:text-white"
+          class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-6xl text-heading"
         >
-          {t('home.hello')}
+          <span class="text-muted-foreground">[</span><span class="text-primary">✓</span><span class="text-muted-foreground">]</span>{' '}{t('home.hello')}<span class="terminal-cursor" aria-hidden="true"></span>
         </h1>
-        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+        <p class="mb-6 text-base text-foreground">
           {t('home.am')}
           <br class="hidden lg:block" />
           {t('home.dev')}
         </p>
-        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+        <p class="mb-6 text-base text-foreground">
           {t('home.layered')}
         </p>
-        <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
+        <p class="mb-2 mt-6 font-semibold text-foreground">
           {t('home.help')}
         </p>
-        <ul
-          class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
-        >
-          <li>{t('home.sfDev')}</li>
-          <li>{t('home.sfArch')}</li>
-          <li>{t('home.webDev')}</li>
-          <li>{t('home.more')}</li>
+        <ul class="py-2 space-y-[3px] text-sm text-foreground">
+          <li><span class="mr-1">&gt;</span>{t('home.sfDev')}</li>
+          <li><span class="mr-1">&gt;</span>{t('home.sfArch')}</li>
+          <li><span class="mr-1">&gt;</span>{t('home.webDev')}</li>
+          <li><span class="mr-1">&gt;</span>{t('home.more')}</li>
         </ul>
         <Button text={t('nav.what')} link={translatePath('/what/')} />
       </div>
-      <div
-        class="relative justify-end hidden w-full mt-10 md:flex md:pl-10 md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-0"
-      >
-        <div class="relative z-50 w-full">
-          <div class="relative z-30 px-10">
-            <Picture
-              src="/assets/images/photo.png"
-              alt={t('home.title')}
-              loading="eager"
-              decoding="auto"
-              width={1024} height={1024}
-              class="relative z-30 w-full aspect-[1024/1024] md:max-w-md mx-auto dark:-translate-y-0.5"
-            />
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+  </section>
 
   <Separator text={t('projects.separator')} />
   <Projects projects={projectsCol} />

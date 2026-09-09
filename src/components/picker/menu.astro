@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations, useTranslatedPath } from '@i18n/utils'
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const { mobile = false } = Astro.props;
 ---
 {
   menus.map((menu) => {
@@ -14,7 +15,11 @@ const translatePath = useTranslatedPath(lang);
     return (
     <a
       href={href}
-      class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
+      class:list={[
+        "transition-colors hover:text-primary",
+        mobile ? "w-full py-2 text-base text-left" : "text-sm",
+        Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(`${href}/`)) ? "underline underline-offset-4" : ""
+      ]}
     >
       {t(translationKey)}
     </a>

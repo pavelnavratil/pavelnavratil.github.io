@@ -8,7 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 <Layout language={lang} title={t('worked.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('worked.title')}
       description={t('worked.desc')}
@@ -18,12 +18,13 @@ const t = useTranslations(lang);
       class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
     >
       {
-        worked.map((work) => {
+        worked.map((work, index) => {
           return (
             <Work
               name={work.name}
               description={work.description}
               image={work.image}
+              isAboveFold={index === 0}
             />
           )
         })

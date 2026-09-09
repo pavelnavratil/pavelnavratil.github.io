@@ -1,40 +1,31 @@
 ---
 import Footer from "@components/page-template/footer.astro";
 import Header from "@components/page-template/header.astro";
-import SquareLines from "@components/square-background/square-lines.astro";
+import "@assets/css/main.css";
 const {language, title} = Astro.props;
 ---
-<html lang={language}>
+<html lang={language} data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <script is:inline>
-      if (typeof Storage !== 'undefined') {
-        if (
-          localStorage.getItem('dark_mode') &&
-          localStorage.getItem('dark_mode') === 'true'
-        ) {
-          document.documentElement.classList.add('dark')
-        }
-      }
+      const savedTheme = localStorage.getItem('theme')
+      const theme = savedTheme === 'light' || savedTheme === 'dark'
+        ? savedTheme
+        : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      document.documentElement.dataset.theme = theme
+      document.documentElement.classList.toggle('dark', theme === 'dark')
     </script>
 
-    <style>
-      .prose img {
-        border-radius: 20px;
-      }
-    </style>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
-    <script src="../assets/css/main.css"></script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
-  <body>
-    <SquareLines />
+  <body class="min-h-screen flex flex-col bg-background text-foreground">
     <Header language={language}/>
-    <slot />
-    <Footer />
-    <script src="../assets/js/main.js"></script>
+    <main><slot /></main>
+    <Footer language={language} />
+    <script src="/src/assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>

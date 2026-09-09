@@ -1,6 +1,10 @@
 ---
 title: Můj druhý příspěvek v češtině
 description: Testování funkce blogu.
+tags:
+  - Salesforce
+  - Architektura
+  - Integrace
 dateFormatted: 2. srpna 2024
 pubDate: 2024-08-02T00:00:00.000Z
 ---

@@ -8,14 +8,12 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 <Layout language={lang} title={t('writings.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('writings.title')}
       description={t('writings.prelude')}
     />
 
-    <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
-      <PostsLoop count="999999999" />
-    </div>
+    <PostsLoop />
   </section>
 </Layout>

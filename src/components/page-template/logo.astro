@@ -5,12 +5,12 @@ const translatePath = useTranslatedPath(lang);
 ---
 <a
   href={translatePath('/')}
-  class="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-black dark:text-white font-semibold"
+  class="relative z-30 inline-flex text-primary transition-colors hover:text-heading"
+  aria-label="Home"
 >
-  <span
-    class="text-xl -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300"
-    >&#9729</span
-  >
-  <!-- Logo Text -->
-  <span class="-translate-y-0.5"> navratil</span>
+  <svg aria-hidden="true" fill="none" height="36" viewBox="0 0 100 100" width="36">
+    <path d="M38,16 L20,50 L38,84" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+    <path d="M62,16 L80,50 L62,84" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+    <path d="M38,16 L62,84" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+  </svg>
 </a>

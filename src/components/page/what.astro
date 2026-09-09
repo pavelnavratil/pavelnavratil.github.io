@@ -7,31 +7,50 @@ import AboutExperience from '@components/item-template/about-experience.astro'
 import { getLangFromUrl, useTranslations } from '@i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const certificationCategories = [...new Set(certifications.map((certificate) => certificate.category))]
 ---
 <Layout language={lang} title={t('what.title')} prefixLocale={prefixLocale}>
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title={t('what.title')}
       description={t('what.desc')}
     />
 
-    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">{t('bio.title')}</h2>
+    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 text-heading">{t('bio.title')}</h2>
     <p
-      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="text-sm leading-6 text-muted-foreground sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
       {t('bio.desc')}
     </p>
 
     <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 text-heading"
     >
       {t('certifications.title')}
     </h2>
     <div
+      class="flex flex-wrap gap-2 mt-6"
+      role="group"
+      aria-label={t('certifications.filterByCategory')}
+      data-certification-filters
+    >
+      <button class="certification-filter" type="button" data-category-filter="*" aria-pressed="true">
+        {t('certifications.all')}
+      </button>
+      {
+        certificationCategories.map((category) => (
+          <button class="certification-filter" type="button" data-category-filter={category} aria-pressed="false">
+            {category}
+          </button>
+        ))
+      }
+    </div>
+    <div
       class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+      data-certification-grid
     >
       {
-        certifications.map((certificate) => {
+        certifications.map((certificate, index) => {
           return (
             <Certificate
               name={certificate.name}
@@ -41,6 +60,7 @@ const t = useTranslations(lang)
               issueDate={certificate.issueDate}
               category={certificate.category}
               retiringOn={certificate.retiringOn}
+              isAboveFold={index === 0}
             />
           )
         })
@@ -48,51 +68,86 @@ const t = useTranslations(lang)
     </div>
     
     <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 text-heading"
     >
       Experience
     </h2>
-    <div class="px-5 py-10">
+    <div class="relative mt-10 ml-3 border-l border-border">
       {
-        experiences.map((experience, loop) => {
+        experiences.map((experience, index) => {
           return (
             <>
-              {loop == 0 || loop == 1 ? (
-                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
-                  <AboutExperience
-                    dates={experience.dates}
-                    role={experience.role}
-                    company={experience.company}
-                    description={experience.description}
-                    logo={experience.logo}
-                  />
-                </div>
-              ) : (
                 <AboutExperience
                   dates={experience.dates}
                   role={experience.role}
                   company={experience.company}
                   description={experience.description}
                   logo={experience.logo}
+                  isLatest={index === 0}
                 />
-              )}
             </>
           )
         })
       }
     </div>
   
-    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Let's Connect</h2>
+    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 text-heading">Let's Connect</h2>
     <p
-      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="text-sm leading-6 text-muted-foreground sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
       If you want to stay up to date with my work be sure to <a
         href="https://twitter.com/ccikai"
         target="_blank"
-        class="text-indigo-600 underline">follow me on twitter</a
-      >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
+        class="text-primary underline">follow me on twitter</a
+      >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-primary underline"
         >email</a
       > and I'll be sure to get back to you.
     </p>
   </section>
 </Layout>
+
+<style>
+  .certification-filter {
+    border: 1px solid #d29922;
+    border-radius: 0.125rem;
+    padding: 0.5rem 1.25rem;
+    background: transparent;
+    color: #d29922;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  .certification-filter:hover,
+  .certification-filter[aria-pressed='true'] {
+    background: #d29922;
+    color: white;
+  }
+</style>
+
+<script>
+  const filterGroups = document.querySelectorAll('[data-certification-filters]');
+
+  filterGroups.forEach((filterGroup) => {
+    const grid = filterGroup.nextElementSibling;
+    if (!grid?.matches('[data-certification-grid]')) return;
+
+    const buttons = [...filterGroup.querySelectorAll('[data-category-filter]')];
+    const cards = [...grid.querySelectorAll('[data-certification-card]')];
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category-filter');
+
+        buttons.forEach((candidate) => {
+          candidate.setAttribute('aria-pressed', String(candidate === button));
+        });
+
+        cards.forEach((card) => {
+          const matches = category === '*' || card.getAttribute('data-category') === category;
+          card.classList.toggle('hidden', !matches);
+        });
+      });
+    });
+  });
+</script>

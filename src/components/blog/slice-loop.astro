@@ -11,5 +11,5 @@ const orderedPosts = (await allPosts).sort((a, b) => b.data.pubDate.valueOf() - 
 const posts = orderedPosts.slice(0, count);
 ---
 {posts.map(post => (
-<Item post={post} />
+<Item post={post} showArrow={false} />
   ))}

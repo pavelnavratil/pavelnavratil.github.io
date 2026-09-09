@@ -2,69 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-.prose img {
-  border-radius: 30px;
-}
-
-#sun {
-  transform: translate3d(0, 0px, 0);
-}
-
-#moon {
-  transform: translate3d(0, 0px, 0);
-}
-
-#darkToggle:hover #sun {
-  transform: translate3d(0, 10px, 0);
-}
-
-#darkToggle:hover #moon {
-  transform: translate3d(0, 10px, 0);
-}
-
-html.dark #darkToggle:hover .horizon {
-  border-color: #718096 !important;
-}
-
-html.dark {
-    color-scheme: dark;
-}
-
-.horizon .setting {
-  animation: 1s ease 0s 1 setting;
-}
-
-.horizon .rising {
-  animation: 1s ease 0s 1 rising;
-}
-
-@keyframes setting {
-  0% {
-    transform: translate3d(0, 10px, 0)
+@layer base {
+  :root {
+    --background: 210 17% 98%;
+    --foreground: 215 13% 14%;
+    --card: 0 0% 100%;
+    --primary: 148 65% 30%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 210 11% 93%;
+    --muted-foreground: 212 8% 42%;
+    --border: 212 11% 83%;
+    --heading-color: #0969da;
   }
 
-  40% {
-    transform: translate3d(0, -2px, 0)
+  [data-theme='dark'] {
+    --background: 215 28% 7%;
+    --foreground: 210 31% 92%;
+    --card: 215 28% 11%;
+    --primary: 154 56% 48%;
+    --primary-foreground: 215 28% 7%;
+    --muted: 214 17% 15%;
+    --muted-foreground: 213 7% 52%;
+    --border: 214 17% 18%;
+    --heading-color: #58a6ff;
   }
 
-  to {
-    transform: translate3d(0, 30px, 0)
+  * { border-color: hsl(var(--border)); }
+  html { opacity: 0; font-size: 14px; color-scheme: light; }
+  html[data-theme='light'], html[data-theme='dark'] { opacity: 1; }
+  html[data-theme='dark'] { color-scheme: dark; }
+  body {
+    font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4 { color: var(--heading-color); }
 }
 
-@keyframes rising {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 30px, 0)
-  }
+.prose { color: hsl(var(--foreground)); }
+.prose :where(h1, h2, h3, h4) { color: var(--heading-color); }
+.prose :where(p, li, strong) { color: hsl(var(--foreground)); }
+.prose :where(a) { color: hsl(var(--primary)); }
+.prose img { border-radius: 0.125rem; }
 
-  40% {
-    opacity: 1;
-    transform: translate3d(0, -2px, 0)
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 10, 0)
-  }
+@keyframes terminal-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.terminal-cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.8em;
+  margin-left: 0.1em;
+  border-radius: 1px;
+  background-color: hsl(var(--primary));
+  vertical-align: middle;
+  transform: translateY(-0.05em);
+  animation: terminal-blink 1s step-end infinite;
 }
