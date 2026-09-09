@@ -58,10 +58,6 @@ export const ui = {
 		"certifications.filterByCategory": "Filter certifications by category",
 		"certifications.all": "All",
 		"experience.title": "Experience",
-		"connect.title": "Let's Connect",
-		"connect.prompt":
-			"If you would like to discuss a project or learn more about my work,",
-		"connect.email": "send me an email",
 		"menu.open": "Open menu",
 		"menu.close": "Close menu",
 		"theme.toggle": "Toggle colour theme",
@@ -118,10 +114,6 @@ export const ui = {
 		"certifications.filterByCategory": "Filtrovat certifikace podle kategorie",
 		"certifications.all": "Vše",
 		"experience.title": "Pracovní zkušenosti",
-		"connect.title": "Spojme se",
-		"connect.prompt":
-			"Pokud chcete probrat projekt nebo se dozvědět více o mé práci,",
-		"connect.email": "napište mi e-mail",
 		"menu.open": "Otevřít nabídku",
 		"menu.close": "Zavřít nabídku",
 		"theme.toggle": "Přepnout barevný motiv",
