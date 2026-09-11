@@ -27,32 +27,32 @@ export const ui = {
 			"a full-stack web developer with a passion for Salesforce, Astro, and Payload CMS.",
 		"home.layered":
 			"Outside work, you will usually find me cycling, travelling, or exploring the outdoors.",
-		"home.help": "I can help you out with:",
+		"home.help": "I can help you with:",
 		"home.sfDev": "Salesforce Development",
 		"home.sfArch": "Salesforce Architecture",
 		"home.webDev": "Website Development",
 		"home.more": "and more...",
 		"projects.title": "My Personal Projects",
 		"projects.desc":
-			"Here are some of my current personal projects I'm working on.",
+			"Here are some of the personal projects I'm currently working on.",
 		"projects.separator": "Check out my personal projects",
 		"worked.title": " My Work",
 		"worked.desc": "Here are some projects I have worked on over the years.",
-		"worked.separator": "Check out my work projects",
+		"worked.separator": "Explore my professional projects",
 		"writings.title": " My Thoughts",
-		"writings.prelude": "About life, coding and stargazing.",
+		"writings.prelude": "About life, coding, and stargazing.",
 		"writings.desc":
-			"Along with coding I also like to write about life. Here are some of my recent posts.",
+			"In addition to coding, I also enjoy writing about life. Here are some of my recent posts.",
 		"writings.separator": " Some of my thoughts",
 		"posts.filterByTag": "Filter posts by tag",
 		"posts.allTags": "All",
 		"posts.emptyTag": "No posts match this tag.",
 		"what.title": " What I Do",
 		"what.desc":
-			"I'm a full stack web developer with a passion for Salesforce, Astro and Payload CMS.",
+			"I'm a full-stack web developer with a passion for Salesforce, Astro, and Payload CMS.",
 		"bio.title": " Short bio",
 		"bio.desc":
-			"Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging Mentor. Relentless.",
+			"Analytical thinker. Creative problem solver. Avid learner. Thoughtful listener. Engaging mentor. Relentless.",
 		"certifications.title": " Certifications",
 		"certifications.retiring": " Retiring in:",
 		"certifications.active": "Active",
@@ -96,7 +96,7 @@ export const ui = {
 		"worked.title": " Moje práce",
 		"worked.desc":
 			"Zde jsou některé projekty, na kterých jsem pracoval v průběhu let.",
-		"worked.separator": "Podívejte se na moje pracovní projekty",
+		"worked.separator": "Prohlédněte si mé profesní projekty",
 		"writings.title": " Moje myšlenky",
 		"writings.prelude": "O životě, kódování a pozorování hvězd.",
 		"writings.desc":

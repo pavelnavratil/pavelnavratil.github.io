@@ -3,7 +3,7 @@
 		"dates": "Prosinec 2023 – současnost",
 		"role": "Senior Salesforce Developer",
 		"company": "Česká spořitelna",
-		"description": "Vývoj front-endu zákaznického servisu a CRM systému."
+		"description": "Vývoj front-endu pro systémy zákaznického servisu a CRM."
 	},
 	{
 		"dates": "Listopad 2022 – listopad 2023",
@@ -21,12 +21,12 @@
 		"dates": "Duben 2017 – srpen 2020",
 		"role": "Salesforce Developer & Consultant",
 		"company": "AspectWorks, s.r.o.",
-		"description": "Analýza požadavků klientů, zlepšování obchodních procesů a návrh Salesforce řešení a integrací. Vývoj v Apexu, Lightning, LWC a Visualforce včetně migrací dat a podpory adopce systému."
+		"description": "Analýza požadavků klientů, zlepšování obchodních procesů a návrh Salesforce řešení a integrací. Konfigurace Salesforce a vývoj řešení v Apexu, Lightning, LWC a Visualforce, migrace dat a podpora uživatelské adopce a řízení změn."
 	},
 	{
 		"dates": "Říjen 2013 – březen 2017",
 		"role": "Salesforce Developer & Administrator",
 		"company": "Kenneth Copeland Ministries",
-		"description": "Administrace a vývoj interních aplikací pro Sales Cloud, Service Cloud a Pardot. Správa systémů Windows, macOS a Linux, podpora uživatelů, vývoj pro WordPress a WooCommerce a koordinace technologických dodavatelů."
+		"description": "Administrace a vývoj interních aplikací pro Sales Cloud, Service Cloud a Pardot. Správa systémů Windows, macOS a Linux, podpora uživatelů, vývoj pro WordPress a WooCommerce a spolupráce s technologickými dodavateli."
 	}
 ]

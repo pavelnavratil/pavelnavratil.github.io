@@ -1,32 +1,32 @@
 [
 	{
-		"dates": "December 2023 - Present",
+		"dates": "December 2023–present",
 		"role": "Senior Salesforce Developer",
 		"company": "Česká spořitelna",
-		"description": "Responsible for customer service and CRM system front-end development."
+		"description": "Responsible for the front-end development of customer service and CRM systems."
 	},
 	{
-		"dates": "November 2022 - November 2023",
+		"dates": "November 2022–November 2023",
 		"role": "Senior Salesforce Developer",
 		"company": "GEN",
 		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems."
 	},
 	{
-		"dates": "September 2020 - October 2022",
+		"dates": "September 2020–October 2022",
 		"role": "Senior Salesforce Developer",
 		"company": "Avast",
 		"description": "Designed and delivered Salesforce solutions, translated requirements into technical tasks, mentored junior developers, reviewed code, and supported production systems."
 	},
 	{
-		"dates": "April 2017 - August 2020",
+		"dates": "April 2017–August 2020",
 		"role": "Salesforce Developer & Consultant",
 		"company": "AspectWorks, s.r.o.",
-		"description": "Gathered client requirements, improved business processes, and designed Salesforce solutions and integrations. Delivered configuration, Apex, Lightning, LWC, Visualforce, and data-migration work while supporting adoption and change management."
+		"description": "Gathered client requirements, improved business processes, and designed Salesforce solutions and integrations. Delivered Salesforce configurations and solutions using Apex, Lightning, LWC, and Visualforce, performed data migrations, and supported user adoption and change management."
 	},
 	{
-		"dates": "October 2013 - March 2017",
+		"dates": "October 2013–March 2017",
 		"role": "Salesforce Developer & Administrator",
 		"company": "Kenneth Copeland Ministries",
-		"description": "Administered and developed in-house Salesforce applications across Sales Cloud, Service Cloud, and Pardot. Also maintained Windows, macOS, and Linux systems, supported staff, developed WordPress and WooCommerce extensions, and coordinated technology vendors."
+		"description": "Administered and developed in-house Salesforce applications across Sales Cloud, Service Cloud, and Pardot. Also maintained Windows, macOS, and Linux systems, supported staff, developed WordPress and WooCommerce extensions, and coordinated with technology vendors."
 	}
 ]
