@@ -26,6 +26,7 @@ const currentPath = Astro.url.pathname.endsWith("/")
     return (
     <a
       href={href}
+      data-nav-key={menu.key}
       class:list={[
         "text-primary transition-colors hover:underline",
         mobile ? "w-full py-2 text-base text-left" : "text-sm",

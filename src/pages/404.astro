@@ -1,19 +1,80 @@
 ---
+import menus from "@collections/menu.json";
+import { ui } from "@i18n/ui";
+import { useTranslatedPath } from "@i18n/utils";
 import Layout from "@layouts/main.astro";
+import { authorName } from "@utils/const";
+
+// GitHub Pages serves this one static file for every 404, Czech paths
+// included, so the page ships English and localizes itself when the URL sits
+// under /cs/. That covers the chrome as well as the copy — otherwise a Czech
+// visitor would land on English nav links pointing at English pages.
+const csPath = useTranslatedPath("cs");
+const cs = {
+	title: ui.cs["notFound.title"],
+	pageTitle: `${ui.cs["notFound.title"]} | ${authorName}`,
+	desc: ui.cs["notFound.desc"],
+	home: ui.cs["notFound.home"],
+	skip: ui.cs["a11y.skipToContent"],
+	homeHref: csPath("/"),
+	nav: Object.fromEntries(
+		menus.map((menu) => [
+			menu.key,
+			{
+				label: ui.cs[`nav.${menu.key}` as keyof typeof ui.cs],
+				href: csPath(menu.url),
+			},
+		]),
+	),
+};
 ---
 
 <Layout
   language="en"
-  title="Page not found"
-  description="The page you requested could not be found."
+  title={ui.en['notFound.title']}
+  description={ui.en['notFound.desc']}
   noindex
 >
   <section class="relative z-20 max-w-4xl mx-auto my-16 px-7 lg:px-0">
     <p class="mb-3 text-sm font-semibold text-accent">404</p>
-    <h1 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl">Page not found</h1>
-    <p class="mt-4 text-base text-muted-foreground">The address may be incorrect, or the page may have moved.</p>
-    <a href="/" class="inline-flex px-5 py-2 mt-6 text-sm font-semibold border rounded-sm bg-primary text-primary-foreground border-primary hover:bg-transparent hover:text-primary">
-      Return home
+    <h1 data-not-found-title class="text-3xl font-bold tracking-tight text-heading sm:text-4xl">
+      {ui.en['notFound.title']}
+    </h1>
+    <p data-not-found-desc class="mt-4 text-base text-muted-foreground">
+      {ui.en['notFound.desc']}
+    </p>
+    <a
+      href="/"
+      data-not-found-home
+      class="inline-flex px-5 py-2 mt-6 text-sm font-semibold border rounded-sm bg-primary text-primary-foreground border-primary hover:bg-transparent hover:text-primary"
+    >
+      {ui.en['notFound.home']}
     </a>
   </section>
+
+  <script is:inline define:vars={{ cs }}>
+    if (location.pathname.startsWith('/cs/') || location.pathname === '/cs') {
+      const set = (selector, text) => {
+        const node = document.querySelector(selector)
+        if (node) node.textContent = text
+      }
+      document.documentElement.lang = 'cs'
+      document.title = cs.pageTitle
+      set('[data-not-found-title]', cs.title)
+      set('[data-not-found-desc]', cs.desc)
+      set('[data-not-found-home]', cs.home)
+      set('[data-skip-link]', cs.skip)
+      const home = document.querySelector('[data-not-found-home]')
+      if (home) home.setAttribute('href', cs.homeHref)
+      for (const logo of document.querySelectorAll('[data-logo-link]')) {
+        logo.setAttribute('href', cs.homeHref)
+      }
+      for (const link of document.querySelectorAll('[data-nav-key]')) {
+        const item = cs.nav[link.dataset.navKey]
+        if (!item) continue
+        link.textContent = item.label
+        link.setAttribute('href', item.href)
+      }
+    }
+  </script>
 </Layout>
