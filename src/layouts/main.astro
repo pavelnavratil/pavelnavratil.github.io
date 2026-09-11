@@ -30,6 +30,9 @@ const canonicalUrl = new URL(
 	Astro.url.pathname,
 	Astro.site ?? Astro.url.origin,
 );
+// Social cards need an absolute URL; the file lives in public/ so the path is
+// stable across builds and stays valid in scrapers' caches.
+const socialImageUrl = new URL("/og.png", Astro.site ?? Astro.url.origin);
 const pagePath = getPathWithoutLanguage(Astro.url);
 const translatePath = useTranslatedPath(language);
 const alternates = noindex
@@ -91,9 +94,14 @@ const structuredData =
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content={authorName} />
     <meta property="og:locale" content={language === 'cs' ? 'cs_CZ' : 'en_US'} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={authorName} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     {publishedTime && <meta property="article:published_time" content={publishedTime} />}
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)" />
