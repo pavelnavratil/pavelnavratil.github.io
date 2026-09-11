@@ -9,7 +9,6 @@ import Button from "@components/common/button.astro";
 import Projects from "@components/home/projects.astro";
 import Separator from "@components/home/separator.astro";
 import Worked from "@components/home/worked.astro";
-import Writings from "@components/home/writings.astro";
 import {
 	getLangFromUrl,
 	useTranslatedPath,
@@ -55,6 +54,4 @@ const translatePath = useTranslatedPath(lang);
   <Projects projects={projectsCol} />
   <Separator text={t('worked.separator')} />
   <Worked worked={workedCol} />
-  <Separator text={t('writings.separator')} />
-  <Writings />
 </Layout>

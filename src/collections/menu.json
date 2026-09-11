@@ -4,10 +4,6 @@
 		"url": "/"
 	},
 	{
-		"key": "posts",
-		"url": "/posts"
-	},
-	{
 		"key": "projects",
 		"url": "/projects"
 	},

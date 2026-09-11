@@ -60,6 +60,20 @@ prefix (`/who/`); Czech is prefixed (`/cs/who/`). Links are built with
 date at **build time**, and the month name is localized at render time — see
 `src/utils/certifications.ts`.
 
+### Blog (built, not published)
+
+The blog is fully implemented — content collection, tag filters, per-language
+routing — but it is **not published**: the `src/pages/**/posts.astro` and
+`src/pages/**/post/[...slug].astro` routes were removed, so nothing under
+`/posts/` or `/post/` is generated, linked, or listed in the sitemap. The
+components (`src/components/blog/`, `src/components/home/writings.astro`),
+`src/layouts/post.astro`, the schema in `src/content.config.ts`, and the posts
+in `src/content/blog/` are all still here and intentionally unused.
+
+To publish it again, restore those four route files and re-add the `posts`
+entry to `src/collections/menu.json`. The posts currently in the repo are
+placeholders and should be replaced first.
+
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site
