@@ -3,7 +3,11 @@ import Footer from "@components/page-template/footer.astro";
 import Header from "@components/page-template/header.astro";
 import "@assets/css/main.css";
 import { languages } from "@i18n/ui";
-import { getPathWithoutLanguage, useTranslatedPath } from "@i18n/utils";
+import {
+	getPathWithoutLanguage,
+	useTranslatedPath,
+	useTranslations,
+} from "@i18n/utils";
 import { authorName } from "@utils/const";
 
 interface Props {
@@ -35,6 +39,7 @@ const canonicalUrl = new URL(
 const socialImageUrl = new URL("/og.png", Astro.site ?? Astro.url.origin);
 const pagePath = getPathWithoutLanguage(Astro.url);
 const translatePath = useTranslatedPath(language);
+const t = useTranslations(language);
 const alternates = noindex
 	? []
 	: Object.keys(languages).map((locale) => {
@@ -119,8 +124,14 @@ const structuredData =
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
   <body class="min-h-screen flex flex-col bg-background text-foreground">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-sm focus:border focus:border-primary focus:bg-card focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary"
+    >
+      {t('a11y.skipToContent')}
+    </a>
     <Header />
-    <main><slot /></main>
+    <main id="main-content" tabindex="-1"><slot /></main>
 		<Footer showLanguagePicker={!noindex} />
     <script src="/src/assets/js/main.js"></script>
   </body>
