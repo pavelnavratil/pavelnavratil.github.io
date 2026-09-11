@@ -39,13 +39,9 @@ const alternates = noindex
 				pagePath,
 				locale as keyof typeof languages,
 			);
-			const normalizedPath =
-				localizedPath === "/" || localizedPath.endsWith("/")
-					? localizedPath
-					: `${localizedPath}/`;
 			return {
 				locale: locale as keyof typeof languages,
-				url: new URL(normalizedPath, Astro.site ?? Astro.url.origin),
+				url: new URL(localizedPath, Astro.site ?? Astro.url.origin),
 			};
 		});
 const defaultAlternate = alternates.find(({ locale }) => locale === "en");

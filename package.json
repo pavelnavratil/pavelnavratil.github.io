@@ -17,12 +17,20 @@
 		"@biomejs/biome": "1.7.3",
 		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
-		"astro": "^7.3.1",
+		"astro": "^7.3.2",
 		"sharp": "^0.35.4",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^5.9.3"
 	},
 	"repository": "https://github.com/pavelnavratil/pavelnavratil.github.io.git",
 	"author": "Pavel Navratil <navratil@inp.cz>",
-	"packageManager": "pnpm@9.12.2"
+	"packageManager": "pnpm@9.12.2",
+	"pnpm": {
+		"overrides": {
+			"anymatch>picomatch": "^2.3.2",
+			"fast-uri": "^3.1.6",
+			"smol-toml": "^1.7.1",
+			"ajv": "^8.18.0"
+		}
+	}
 }

@@ -1,8 +1,15 @@
 import { defaultLang, showDefaultLang, ui } from "@i18n/ui";
 
+/**
+ * Builds a localized path. Always ends in a trailing slash to match the
+ * directory-style routes Astro emits, so links don't cost a 301 hop.
+ */
 export function useTranslatedPath(lang: keyof typeof ui) {
 	return function translatePath(path: string, locale: keyof typeof ui = lang) {
-		const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+		const leadingSlash = path.startsWith("/") ? path : `/${path}`;
+		const normalizedPath = leadingSlash.endsWith("/")
+			? leadingSlash
+			: `${leadingSlash}/`;
 		return !showDefaultLang && locale === defaultLang
 			? normalizedPath
 			: `/${locale}${normalizedPath}`;

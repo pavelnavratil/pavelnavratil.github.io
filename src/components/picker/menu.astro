@@ -10,13 +10,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const { mobile = false } = Astro.props;
+const currentPath = Astro.url.pathname.endsWith("/")
+	? Astro.url.pathname
+	: `${Astro.url.pathname}/`;
 ---
 {
   menus.map((menu) => {
     const link = menu.url;
     const translationKey = `nav.${menu.key}` as keyof typeof ui.en;
     const href = translatePath(link);
-    const isCurrent = Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(`${href}/`));
+    // Home matches exactly; every other entry also matches its nested pages.
+    // (`href` is '/cs/' for Czech home, so a prefix test would match every page.)
+    const isCurrent = link === '/' ? currentPath === href : currentPath.startsWith(href);
     
     return (
     <a
