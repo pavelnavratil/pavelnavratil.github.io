@@ -20,6 +20,7 @@ export interface CertificationEntry {
 	credentialUrl: string;
 	issueDate: string;
 	category: string;
+	/** Retirement month as `YYYY-MM`; empty when the certification has no end date. */
 	retiringOn?: string;
 }
 

@@ -14,7 +14,17 @@ export default defineConfig({
 		},
 	},
 
-	integrations: [sitemap()],
+	integrations: [
+		sitemap({
+			i18n: {
+				defaultLocale: "en",
+				locales: {
+					en: "en-US",
+					cs: "cs-CZ",
+				},
+			},
+		}),
+	],
 	vite: {
 		plugins: [tailwindcss()],
 	},

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { formatRetiringOn, isRetired } from "@utils/certifications";
 import { getImage } from "@utils/images";
 import type { CertificationEntry } from "../../types/content";
 interface Props {
@@ -26,7 +27,8 @@ const {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const imageMetadata = getImage(image);
-const isActive = !retiringOn;
+const isActive = !isRetired(retiringOn);
+const retiringOnLabel = retiringOn ? formatRetiringOn(retiringOn, lang) : "";
 ---
 
 <a href={url} target="_blank" rel="noreferrer" data-certification-card data-category={category} class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group rounded-lg">
@@ -52,7 +54,7 @@ const isActive = !retiringOn;
         <span>{name}</span><span aria-hidden="true" class="ml-1 transition-transform group-hover:translate-x-0.5">↗</span>
       </span>
       <span class="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-        {issueDate}{retiringOn && ` · ${t('certifications.retiring')} ${retiringOn}`}
+        {issueDate}{retiringOnLabel && ` · ${t(isActive ? 'certifications.retiresOn' : 'certifications.retiredOn')} ${retiringOnLabel}`}
       </span>
       <span
         class:list={[
