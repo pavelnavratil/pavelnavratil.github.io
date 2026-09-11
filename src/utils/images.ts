@@ -7,15 +7,15 @@ import platformAppBuilder from "@assets/images/certifications/badges/platformapp
 import platformDeveloperI from "@assets/images/certifications/badges/platformdeveloperi.png";
 import platformDeveloperII from "@assets/images/certifications/badges/platformdeveloperii.png";
 import sharingArchitect from "@assets/images/certifications/badges/sharingandvisibilityarchitect.png";
-import eloquentForce from "@assets/images/projects/eloquentforce.jpg";
-import customerSupport from "@assets/images/worked/csui.jpg";
-import merchandiser from "@assets/images/worked/merchandiser.jpg";
+import eloquentForce from "@assets/images/projects/eloquentforce.png";
+import customerSupport from "@assets/images/worked/csui.png";
+import merchandiser from "@assets/images/worked/merchandiser.png";
 import type { ImageMetadata } from "astro";
 
 const images: Record<string, ImageMetadata> = {
-	"/assets/images/projects/eloquentforce.jpg": eloquentForce,
-	"/assets/images/worked/csui.jpg": customerSupport,
-	"/assets/images/worked/merchandiser.jpg": merchandiser,
+	"/assets/images/projects/eloquentforce.png": eloquentForce,
+	"/assets/images/worked/csui.png": customerSupport,
+	"/assets/images/worked/merchandiser.png": merchandiser,
 	"/assets/images/certifications/badges/administrator.png": administrator,
 	"/assets/images/certifications/badges/aiassociate.png": aiAssociate,
 	"/assets/images/certifications/badges/applicationarchitect.png":
