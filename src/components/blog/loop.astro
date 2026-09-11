@@ -12,15 +12,13 @@ const posts = allPosts.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 const collator = new Intl.Collator(pageLang === "cs" ? "cs" : "en");
-const getPostTags = (post: (typeof posts)[number]) =>
-	Array.isArray(post.data.tags) && post.data.tags.length > 0
-		? post.data.tags
-		: ["Salesforce"];
-const tags = [...new Set(posts.flatMap(getPostTags))].sort((a, b) => {
-	if (a === "Salesforce") return -1;
-	if (b === "Salesforce") return 1;
-	return collator.compare(a, b);
-});
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort(
+	(a, b) => {
+		if (a === "Salesforce") return -1;
+		if (b === "Salesforce") return 1;
+		return collator.compare(a, b);
+	},
+);
 ---
 
 <div data-post-filters>
@@ -34,7 +32,7 @@ const tags = [...new Set(posts.flatMap(getPostTags))].sort((a, b) => {
 
   <div class="z-50 grid items-stretch w-full grid-cols-1 gap-7 my-8 sm:grid-cols-2">
     {posts.map((post) => (
-      <div data-post-card data-tags={JSON.stringify(getPostTags(post))}>
+      <div data-post-card data-tags={JSON.stringify(post.data.tags)}>
         <Item post={post} />
       </div>
     ))}

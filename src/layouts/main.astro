@@ -109,13 +109,11 @@ const structuredData =
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-    <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="min-h-screen flex flex-col bg-background text-foreground">
     <Header />
     <main><slot /></main>
 		<Footer showLanguagePicker={!noindex} />
     <script src="/src/assets/js/main.js"></script>
-    <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>

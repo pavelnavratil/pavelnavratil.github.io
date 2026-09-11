@@ -6,10 +6,7 @@ interface Props {
 	showArrow?: boolean;
 }
 const { post, showArrow = true } = Astro.props;
-const tags =
-	Array.isArray(post.data.tags) && post.data.tags.length > 0
-		? post.data.tags
-		: ["Salesforce"];
+const tags = post.data.tags;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 const postSlug = post.id.split("/").slice(1).join("/");
